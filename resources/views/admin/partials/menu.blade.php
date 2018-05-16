@@ -10,8 +10,24 @@
       <li class="nav-item">
         <a class='sidebar-link' href="{{ route(ADMIN . '.users.index') }}">
           <span class="icon-holder">
-            <i class="c-brown-500 ti-user"></i>
+            <i class="c-green-500 ti-key"></i>
           </span>
-          <span class="title">Users</span>
+          <span class="title">Accounts</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class='sidebar-link' href="{{ route(ADMIN . '.users.index') }}">
+          <span class="icon-holder">
+            <i class="c-red-500 ti-user"></i>
+          </span>
+          <span class="title">Characters</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class='sidebar-link' href="{{ route(ADMIN . '.towns.index') }}">
+          <span class="icon-holder">
+            <i class="c-yellow-500 ti-world"></i>
+          </span>
+          <span class="title">Towns</span>
         </a>
       </li>
