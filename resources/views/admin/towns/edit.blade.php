@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-  Town <small>{{ trans('app.update_item') }}</small>
+  Town <small>{{ trans('admin.update_item') }}</small>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
 
     @include('admin.towns.form')
 
-    <button type="submit" class="btn btn-primary">{{ trans('app.edit_button') }}</button>
+    <button type="submit" class="btn btn-primary">{{ trans('admin.edit_button') }}</button>
     
   {!! Form::close() !!}
   

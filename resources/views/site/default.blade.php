@@ -13,18 +13,18 @@
   <!-- Styles -->
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
-<body class="app">
+<body class="app is-collapsed">
 
-    @include('admin.partials.spinner')
+    @include('site.partials.spinner')
 
     <div>
       <!-- #Left Sidebar ==================== -->
-      @include('admin.partials.sidebar')
+      @include('site.partials.sidebar')
 
       <!-- #Main ============================ -->
       <div class="page-container">
         <!-- ### $Topbar ### -->
-        @include('admin.partials.topbar')
+        @include('site.partials.topbar')
 
         <!-- ### $App Screen Content ### -->
         <main class='main-content bgc-grey-100'>
@@ -33,7 +33,7 @@
 
               <h4 class="c-grey-900 mT-10 mB-30">@yield('page-header')</h4>
         
-              @include('admin.partials.messages')
+              @include('site.partials.messages')
               @yield('content')
 
             </div>

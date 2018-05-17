@@ -41,7 +41,7 @@ class TownController extends Controller
         
         Town::create($request->all());
 
-        return redirect('admin/towns')->withSuccess(trans('app.success_store'));
+        return redirect('admin/towns')->withSuccess(trans('admin.success_store'));
     }
 
     /**
@@ -85,7 +85,7 @@ class TownController extends Controller
 
         $town->update($request->all());
 
-        return redirect()->route(ADMIN . '.towns.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route(ADMIN . '.towns.index')->withSuccess(trans('admin.success_update'));
     }
 
     /**
@@ -98,6 +98,6 @@ class TownController extends Controller
     {
         Town::destroy($id);
 
-        return back()->withSuccess(trans('app.success_destroy')); 
+        return back()->withSuccess(trans('admin.success_destroy')); 
     }
 }

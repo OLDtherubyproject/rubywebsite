@@ -1,14 +1,14 @@
 @extends('admin.default')
 
 @section('page-header')
-    Users <small>{{ trans('app.manage') }}</small>
+    Users <small>{{ trans('admin.manage') }}</small>
 @endsection
 
 @section('content')
 
 <div class="mB-20">
     <a href="{{ route(ADMIN . '.users.create') }}" class="btn btn-info">
-        {{ trans('app.add_button') }}
+        {{ trans('admin.add_button') }}
     </a>
 </div>
 
@@ -41,7 +41,7 @@
                             <td>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <a href="{{ route(ADMIN . '.users.edit', $item->id) }}" title="{{ trans('app.edit_title') }}" class="btn btn-primary btn-sm"><span class="ti-pencil"></span></a></li>
+                                        <a href="{{ route(ADMIN . '.users.edit', $item->id) }}" title="{{ trans('admin.edit_title') }}" class="btn btn-primary btn-sm"><span class="ti-pencil"></span></a></li>
                                     <li class="list-inline-item">
                                         {!! Form::open([
                                             'class'=>'delete',
@@ -50,7 +50,7 @@
                                             ]) 
                                         !!}
 
-                                            <button class="btn btn-danger btn-sm" title="{{ trans('app.delete_title') }}"><i class="ti-trash"></i></button>
+                                            <button class="btn btn-danger btn-sm" title="{{ trans('admin.delete_title') }}"><i class="ti-trash"></i></button>
                                             
                                         {!! Form::close() !!}
                                     </li>

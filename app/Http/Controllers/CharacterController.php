@@ -43,7 +43,7 @@ class CharacterController extends Controller
         
         Character::create($request->all());
 
-        return redirect('admin/characters')->withSuccess(trans('app.success_store'));
+        return redirect('admin/characters')->withSuccess(trans('admin.success_store'));
     }
 
     /**
@@ -88,7 +88,7 @@ class CharacterController extends Controller
 
         $character->update($request->all());
 
-        return redirect()->route(ADMIN . '.characters.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route(ADMIN . '.characters.index')->withSuccess(trans('admin.success_update'));
     }
 
     /**
@@ -101,6 +101,6 @@ class CharacterController extends Controller
     {
         Character::destroy($id);
 
-        return back()->withSuccess(trans('app.success_destroy')); 
+        return back()->withSuccess(trans('admin.success_destroy')); 
     }
 }
