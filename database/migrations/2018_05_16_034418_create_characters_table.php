@@ -18,13 +18,19 @@ class CreateCharactersTable extends Migration
             $table->string('name')->unique();
             $table->integer('level')->unsigned();
             $table->bigInteger('experience')->unsigned();
+            $table->integer('account_id')->unsigned();
+            $table->integer('group_id')->unsigned();
             $table->timestamps();
 
-            $table->integer('account_id')->unsigned();
             $table->foreign('account_id')
                   ->references('id')
                   ->on('users')
                   ->onDelete('cascade');
+
+            $table->foreign('group_id')
+                  ->references('id')
+                  ->on('groups')
+                  ->onDelete('restrict');
         });
     }
 

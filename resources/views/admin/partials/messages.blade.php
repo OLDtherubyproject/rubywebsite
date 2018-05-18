@@ -1,4 +1,7 @@
 @if (Session::has('errors'))
+    @php
+        alert()->error('Oops...', 'Something went wrong!');
+    @endphp
     <div class="alert alert-danger" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
         <ul class="list-unstyled">
@@ -27,6 +30,9 @@
 
 
 @if (Session::has('success'))
+    <script>
+        swal('xd');
+    </script>
     <div class="alert alert-success" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
         {{Session::get('success')}}

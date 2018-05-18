@@ -3,7 +3,7 @@
 @section('content')
 
 @section('page-header')
-    Characters <small>{{ trans('admin.manage') }}</small>
+    {{ trans('character.name.plural') }} <small>{{ trans('character.manage') }}</small>
 @endsection
 
 <div class="mB-20">
@@ -19,21 +19,21 @@
             
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Account Name</th>
-                        <th>Level</th>
-                        <th>Experience</th>
-                        <th>Actions</th>
+                        <th>{{ trans('character.form.name') }}</th>
+                        <th>{{ trans('character.form.account_name') }}</th>
+                        <th>{{ trans('character.form.level') }}</th>
+                        <th>{{ trans('character.form.experience') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </thead>
              
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Account Name</th>
-                        <th>Level</th>
-                        <th>Experience</th>
-                        <th>Actions</th>
+                        <th>{{ trans('character.form.name') }}</th>
+                        <th>{{ trans('character.form.account_name') }}</th>
+                        <th>{{ trans('character.form.level') }}</th>
+                        <th>{{ trans('character.form.experience') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </tfoot>
              

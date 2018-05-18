@@ -25,7 +25,7 @@ class users extends Seeder
                 'email' => 'test@example.com',
                 'password' => bcrypt('ygw52puf'),
                 'avatar'   => 'user2-160x160.jpg',
-                'role'     => 10,
+                'role'     => 5,
                 'bio'      => $faker->realText(),
             ]);
         }

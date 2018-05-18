@@ -2,6 +2,4 @@
 
 @section('content')
 
-xd
-
 @endsection

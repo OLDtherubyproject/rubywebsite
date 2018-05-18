@@ -3,7 +3,7 @@
 @section('content')
 
 @section('page-header')
-    Towns <small>{{ trans('admin.manage') }}</small>
+    {{ trans('town.name.plural') }} <small>{{ trans('town.manage') }}</small>
 @endsection
 
 <div class="mB-20">
@@ -19,7 +19,7 @@
             
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('town.form.name') }}</th>
                         <th>X</th>
                         <th>Y</th>
                         <th>Z</th>
@@ -29,7 +29,7 @@
              
                 <tfoot>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('town.form.name') }}</th>
                         <th>X</th>
                         <th>Y</th>
                         <th>Z</th>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Character;
 use App\User;
+use App\Group;
 
 class CharacterController extends Controller
 {
@@ -27,8 +28,9 @@ class CharacterController extends Controller
      */
     public function create()
     {
+        $groups = Group::pluck('name', 'id');
         $users = User::pluck('login', 'id');
-        return view('admin.characters.create', compact('users'));
+        return view('admin.characters.create', compact('users', 'groups'));
     }
 
     /**
@@ -67,10 +69,11 @@ class CharacterController extends Controller
      */
     public function edit($id)
     {
+        $groups = Group::pluck('name', 'id');
         $users = User::pluck('login', 'id');
         $character = Character::findOrFail($id);
 
-        return view('admin.characters.edit', compact('character'), compact('users'));
+        return view('admin.characters.edit', compact('character', 'users', 'groups'));
     }
 
     /**
@@ -82,7 +85,7 @@ class CharacterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, Town::rules(true, $id));
+        $this->validate($request, Character::rules(true, $id));
 
         $character = Character::findOrFail($id);
 

@@ -13,7 +13,7 @@
   <!-- Styles -->
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
-<body class="app is-collapsed">
+<body class="app">
 
     @include('site.partials.spinner')
 
