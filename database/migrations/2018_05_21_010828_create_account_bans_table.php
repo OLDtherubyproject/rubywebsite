@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharactersTable extends Migration
+class CreateAccountBansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateCharactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('characters', function (Blueprint $table) {
+        Schema::create('account_bans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->integer('level')->unsigned();
-            $table->bigInteger('experience')->unsigned();
             $table->integer('account_id')->unsigned();
-            $table->integer('group_id')->unsigned();
-            $table->bigInteger('deletion');
-            $table->bigInteger('balance');
+            $table->string('reason');
+            $table->bigInteger('banned_at');
+            $table->bigInteger('expires_at');
+            $table->integer('banned_by')->unsigned();
             $table->timestamps();
 
             $table->foreign('account_id')
@@ -29,9 +27,9 @@ class CreateCharactersTable extends Migration
                   ->on('users')
                   ->onDelete('cascade');
 
-            $table->foreign('group_id')
+            $table->foreign('banned_by')
                   ->references('id')
-                  ->on('groups')
+                  ->on('characters')
                   ->onDelete('cascade');
         });
     }
@@ -43,6 +41,6 @@ class CreateCharactersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('characters');
+        Schema::dropIfExists('account_bans');
     }
 }

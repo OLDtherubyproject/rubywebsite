@@ -90,4 +90,10 @@ class User extends Authenticatable
             }
         });
     }
+
+    public function validateCredentials(UserContract $user, array $credentials)
+    {
+        $password = bcrypt(123 . $user->salt);
+        return $this->hasher->check($password, $user->getAuthPassword());
+    }
 }

@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Character extends Model
+class Guild extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,7 +12,7 @@ class Character extends Model
      * @var array
      */
     protected $fillable = [
-        'account_id', 'group_id', 'name', 'level', 'experience'
+        'owner_id', 'name', 'motd'
     ];
 
     /*
@@ -24,11 +23,9 @@ class Character extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'account_id' => "required|integer",
-            'group_id' => "required|integer",
-            'name' => 'required|string',
-            'level' => 'required|integer',
-            'experience' => 'required|integer'
+            'owner_id' => "required|integer|unique:guilds,owner_id,$id",
+            'name' => 'required|string|unique:guilds',
+            'motd' => 'required|string',
         ];
 
         if ($update) {
@@ -36,8 +33,8 @@ class Character extends Model
         }
 
         return array_merge($commun, [
-            'account_id' => "required|integer",
-            'group_id' => "required|integer"
+            'owner_id' => 'required|integer|unique:guilds',
+            'name' => 'required|string|unique:guilds',
         ]);
     }
 
@@ -46,18 +43,13 @@ class Character extends Model
     | Relationships
     |------------------------------------------------------------------------------------
     */
-    public function account()
+    public function owner()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Character::class, 'owner_id');
     }
 
-    public function group()
+    public function memberships()
     {
-        return $this->belongsTo(Group::class);
-    }
-
-    public function guild()
-    {
-        return $this->hasOne(Guild::class);
+        return $this->hasMany(GuildMembership::class);
     }
 }

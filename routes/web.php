@@ -16,6 +16,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::resource('towns','TownController');
         Route::resource('characters','CharacterController');
         Route::resource('groups','GroupController');
+        Route::resource('guilds','GuildController');
+        Route::resource('items','ItemController');
 
 
         Route::get('settings/website','SettingController@website')->name('website_settings');

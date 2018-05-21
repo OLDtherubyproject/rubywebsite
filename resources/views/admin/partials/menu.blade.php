@@ -2,7 +2,7 @@
       <li class="nav-item mT-30 active">
         <a class='sidebar-link' href="{{ route(ADMIN . '.dash') }}" default>
           <span class="icon-holder">
-            <i class="c-blue-500 ti-home"></i>
+            <i class="c-blue-500 icon-home"></i>
           </span>
           <span class="title">Dashboard</span>
         </a>
@@ -10,7 +10,7 @@
       <li class="nav-item">
         <a class='sidebar-link' href="{{ route(ADMIN . '.users.index') }}">
           <span class="icon-holder">
-            <i class="c-green-500 ti-key"></i>
+            <i class="c-green-500 icon-key"></i>
           </span>
           <span class="title">Accounts</span>
         </a>
@@ -18,7 +18,7 @@
       <li class="nav-item">
         <a class='sidebar-link' href="{{ route(ADMIN . '.characters.index') }}">
           <span class="icon-holder">
-            <i class="c-red-500 ti-user"></i>
+            <i class="c-red-500 icon-user"></i>
           </span>
           <span class="title">{{ trans('character.name.plural') }}</span>
         </a>
@@ -34,15 +34,31 @@
       <li class="nav-item">
         <a class='sidebar-link' href="{{ route(ADMIN . '.groups.index') }}">
           <span class="icon-holder">
-            <i class="c-deep-purple-500 ti-notepad"></i>
+            <i class="c-deep-purple-500 icon-people"></i>
           </span>
           <span class="title">Groups</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class='sidebar-link' href="{{ route(ADMIN . '.guilds.index') }}">
+          <span class="icon-holder">
+            <i class="c-green-500 icon-organization"></i>
+          </span>
+          <span class="title">Guilds</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class='sidebar-link' href="">
+          <span class="icon-holder">
+            <i class="c-red-500 icon-ban"></i>
+          </span>
+          <span class="title">Bans</span>
         </a>
       </li>
       <li class="nav-item dropdown">
           <a class="dropdown-toggle" href="javascript:void(0);">
             <span class="icon-holder">
-              <i class="c-teal-500 ti-view-list-alt"></i>
+              <i class="c-teal-500 icon-settings"></i>
             </span>
             <span class="title">Settings</span>
             <span class="arrow">

@@ -23,7 +23,7 @@ class users extends Seeder
                 'name' => 'hadji kouceyla',
                 'login' => 'leohige',
                 'email' => 'test@example.com',
-                'password' => bcrypt('ygw52puf'),
+                'password' => bcrypt('pass'),
                 'avatar'   => 'user2-160x160.jpg',
                 'role'     => 5,
                 'bio'      => $faker->realText(),

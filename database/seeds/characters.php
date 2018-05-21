@@ -24,7 +24,9 @@ class characters extends Seeder
                 'level' => 10,
                 'experience' => 5000,
                 'account_id' => 1,
-                'group_id' => 1
+                'group_id' => 1,
+                'deletion' => 0,
+                'balance' => 0,
             ]);
         }
         
