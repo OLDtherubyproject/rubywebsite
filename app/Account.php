@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Account extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'login', 'email', 'password', 'avatar', 'bio', 'role'
+        'name', 'email', 'password', 'avatar', 'bio', 'role'
     ];
 
     /**
@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
     ];
 
     /*
@@ -35,7 +35,7 @@ class User extends Authenticatable
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'email'    => "required|email|unique:users,email,$id",
+            'email' => "required|email|unique:users,email,$id",
             'password' => 'nullable|confirmed',
             'avatar' => 'image',
         ];
@@ -45,7 +45,7 @@ class User extends Authenticatable
         }
 
         return array_merge($commun, [
-            'email'    => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -55,45 +55,17 @@ class User extends Authenticatable
     | Attributes
     |------------------------------------------------------------------------------------
     */
-    public function setPasswordAttribute($value='')
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
-    
     public function getAvatarAttribute($value)
     {
         if (!$value) {
             return 'http://placehold.it/160x160';
         }
-    
-        return config('variables.avatar.public').$value;
+
+        return config('variables.avatar.public') . $value;
     }
+
     public function setAvatarAttribute($photo)
     {
         $this->attributes['avatar'] = move_file($photo, 'avatar');
-    }
-
-    /*
-    |------------------------------------------------------------------------------------
-    | Boot
-    |------------------------------------------------------------------------------------
-    */
-    public static function boot()
-    {
-        parent::boot();
-        static::updating(function($user)
-        {
-            $original = $user->getOriginal();
-            
-            if (\Hash::check('', $user->password)) {
-                $user->attributes['password'] = $original['password'];
-            }
-        });
-    }
-
-    public function validateCredentials(UserContract $user, array $credentials)
-    {
-        $password = bcrypt(123 . $user->salt);
-        return $this->hasher->check($password, $user->getAuthPassword());
     }
 }

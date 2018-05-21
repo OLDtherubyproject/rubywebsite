@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 return [
-    
+
     'boolean' => [
         '0' => 'No',
         '1' => 'Yes',
@@ -11,7 +11,7 @@ return [
         '0' => 'User',
         '10' => 'Admin',
     ],
-    
+
     'status' => [
         '1' => 'Active',
         '0' => 'Inactive',
@@ -20,7 +20,7 @@ return [
     'avatar' => [
         'public' => '/storage/avatar/',
         'folder' => 'avatar',
-        
+
         'width'  => 32,
         'height' => 32,
     ],
@@ -30,6 +30,7 @@ return [
     | ENV of APP
     |------------------------------------------------------------------------------------
     */
+    'encryption' => 'plain', // plain or sha1
     'APP_ADMIN' => 'admin',
     'APP_TOKEN' => env('APP_TOKEN', 'admin123456'),
 ];
