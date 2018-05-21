@@ -12,7 +12,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     */
     Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:5']], function() {
         Route::get('/', 'DashboardController@index')->name('dash');
-        Route::resource('users', 'UserController');
+        Route::resource('accounts', 'AccountController');
         Route::resource('towns','TownController');
         Route::resource('characters','CharacterController');
         Route::resource('groups','GroupController');

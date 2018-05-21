@@ -24,7 +24,7 @@ class CreateAccountBansTable extends Migration
 
             $table->foreign('account_id')
                   ->references('id')
-                  ->on('users')
+                  ->on('accounts')
                   ->onDelete('cascade');
 
             $table->foreign('banned_by')

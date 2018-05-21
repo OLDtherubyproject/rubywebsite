@@ -48,7 +48,7 @@ class Character extends Model
     */
     public function account()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Account::class);
     }
 
     public function group()

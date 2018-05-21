@@ -17,20 +17,12 @@ return [
         '0' => 'Inactive',
     ],
 
-    'avatar' => [
-        'public' => '/storage/avatar/',
-        'folder' => 'avatar',
-
-        'width'  => 32,
-        'height' => 32,
-    ],
-
     /*
     |------------------------------------------------------------------------------------
     | ENV of APP
     |------------------------------------------------------------------------------------
     */
-    'encryption' => 'plain', // plain or sha1
+    'encryption' => 'sha1', // plain or sha1
     'APP_ADMIN' => 'admin',
     'APP_TOKEN' => env('APP_TOKEN', 'admin123456'),
 ];

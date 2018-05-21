@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class='sidebar-link' href="{{ route(ADMIN . '.users.index') }}">
+        <a class='sidebar-link' href="{{ route(ADMIN . '.accounts.index') }}">
           <span class="icon-holder">
             <i class="c-green-500 icon-key"></i>
           </span>

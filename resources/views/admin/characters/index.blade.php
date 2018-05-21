@@ -41,7 +41,7 @@
                     @foreach ($characters as $character)
                         <tr>
                             <td><a href="{{ route(ADMIN . '.characters.show', $character->id) }}">{{ $character->name }}</a></td>
-                            <td><a href="{{ route(ADMIN . '.users.show', $character->account->id) }}">{{ $character->account->login }}</a></td>
+                            <td><a href="{{ route(ADMIN . '.accounts.show', $character->account->id) }}">{{ $character->account->name }}</a></td>
                             <td>{{ $character->level }}</td>
                             <td>{{ $character->experience }}</td>
                             <td width="90px">

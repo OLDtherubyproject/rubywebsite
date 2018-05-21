@@ -10,10 +10,6 @@
         {!! Form::myInput('password', 'password_confirmation', 'Password again') !!}
     
         {!! Form::mySelect('role', 'Role', config('variables.role')) !!}
-    
-        {!! Form::myFile('avatar', 'Avatar') !!}
-    
-        {!! Form::myTextArea('bio', 'Bio') !!}
     </div>  
   </div>
 </div>

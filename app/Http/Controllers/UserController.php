@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+use App\Account;
 
-class UserController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $items = User::latest('updated_at')->get();
+        $items = Account::latest('updated_at')->get();
 
-        return view('admin.users.index', compact('items'));
+        return view('admin.accounts.index', compact('items'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.accounts.create');
     }
 
     /**
@@ -38,9 +38,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, User::rules());
+        $this->validate($request, Account::rules());
         
-        User::create($request->all());
+        Account::create($request->all());
 
         return back()->withSuccess(trans('admin.success_store'));
     }
@@ -64,9 +64,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $item = User::findOrFail($id);
+        $item = Account::findOrFail($id);
 
-        return view('admin.users.edit', compact('item'));
+        return view('admin.accounts.edit', compact('item'));
     }
 
     /**
@@ -78,13 +78,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, User::rules(true, $id));
+        $this->validate($request, Account::rules(true, $id));
 
-        $item = User::findOrFail($id);
+        $item = Account::findOrFail($id);
 
         $item->update($request->all());
 
-        return redirect()->route(ADMIN . '.users.index')->withSuccess(trans('admin.success_update'));
+        return redirect()->route(ADMIN . '.accounts.index')->withSuccess(trans('admin.success_update'));
     }
 
     /**
@@ -95,7 +95,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        Account::destroy($id);
 
         return back()->withSuccess(trans('admin.success_destroy')); 
     }

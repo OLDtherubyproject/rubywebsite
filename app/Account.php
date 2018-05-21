@@ -15,7 +15,7 @@ class Account extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'bio', 'role'
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -35,9 +35,8 @@ class Account extends Authenticatable
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'email' => "required|email|unique:users,email,$id",
-            'password' => 'nullable|confirmed',
-            'avatar' => 'image',
+            'email' => "required|email|unique:accounts,email,$id",
+            'password' => 'nullable|confirmed'
         ];
 
         if ($update) {
@@ -45,27 +44,8 @@ class Account extends Authenticatable
         }
 
         return array_merge($commun, [
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:accounts',
             'password' => 'required|confirmed|min:6',
         ]);
-    }
-
-    /*
-    |------------------------------------------------------------------------------------
-    | Attributes
-    |------------------------------------------------------------------------------------
-    */
-    public function getAvatarAttribute($value)
-    {
-        if (!$value) {
-            return 'http://placehold.it/160x160';
-        }
-
-        return config('variables.avatar.public') . $value;
-    }
-
-    public function setAvatarAttribute($photo)
-    {
-        $this->attributes['avatar'] = move_file($photo, 'avatar');
     }
 }

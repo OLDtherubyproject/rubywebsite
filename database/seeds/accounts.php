@@ -1,9 +1,9 @@
 <?php
 
-use App\User;
+use App\Account;
 use Illuminate\Database\Seeder;
 
-class users extends Seeder
+class accounts extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,22 +14,23 @@ class users extends Seeder
     {
         $faker = Faker\Factory::create();
         
-        User::query()->delete();
+        Account::query()->delete();
         
         $data = [];
         
         for($i = 1; $i <= 1 ; $i++) {
             array_push($data, [
-                'name' => 'hadji kouceyla',
-                'login' => 'leohige',
+                'name' => 'leohige',
                 'email' => 'test@example.com',
-                'password' => bcrypt('pass'),
-                'avatar'   => 'user2-160x160.jpg',
+                'password' => sha1('pass'),
+                'secret' => '',
+                'type' => 5,
+                'premdays' => 0,
+                'lastday' => 0,
                 'role'     => 5,
-                'bio'      => $faker->realText(),
             ]);
         }
         
-        User::insert($data);
+        Account::insert($data);
     }
 }

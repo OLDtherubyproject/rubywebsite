@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Character;
-use App\User;
+use App\Account;
 use App\Group;
 
 class CharacterController extends Controller
@@ -29,8 +29,8 @@ class CharacterController extends Controller
     public function create()
     {
         $groups = Group::pluck('name', 'id');
-        $users = User::pluck('login', 'id');
-        return view('admin.characters.create', compact('users', 'groups'));
+        $accounts = Account::pluck('name', 'id');
+        return view('admin.characters.create', compact('accounts', 'groups'));
     }
 
     /**
@@ -70,10 +70,10 @@ class CharacterController extends Controller
     public function edit($id)
     {
         $groups = Group::pluck('name', 'id');
-        $users = User::pluck('login', 'id');
+        $accounts = Account::pluck('name', 'id');
         $character = Character::findOrFail($id);
 
-        return view('admin.characters.edit', compact('character', 'users', 'groups'));
+        return view('admin.characters.edit', compact('character', 'accounts', 'groups'));
     }
 
     /**
