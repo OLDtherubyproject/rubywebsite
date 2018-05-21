@@ -6,13 +6,13 @@
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
 
-        <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
-            <label for="login" class="text-normal text-dark">Login</label>
-            <input id="login" type="text" class="form-control" name="login" value="{{ old('login') }}" required autofocus>
+        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+            <label for="name" class="text-normal text-dark">Account Name</label>
+            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-            @if ($errors->has('login'))
+            @if ($errors->has('name'))
                 <span class="form-text text-danger">
-                    <small>{{ $errors->first('login') }}</small>
+                    <small>{{ $errors->first('name') }}</small>
                 </span>
             @endif
         </div>
