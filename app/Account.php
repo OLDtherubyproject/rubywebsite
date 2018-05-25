@@ -27,6 +27,13 @@ class Account extends Authenticatable
         'password',
     ];
 
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     /*
     |------------------------------------------------------------------------------------
     | Validations
@@ -34,16 +41,17 @@ class Account extends Authenticatable
     */
     public static function rules($update = false, $id = null)
     {
-        $commun = [
-            'email' => "required|email|unique:accounts,email,$id",
+        $rules = [
+            'email' => 'required|email|unique:accounts,email,' . $id,
             'password' => 'nullable|confirmed'
         ];
 
         if ($update) {
-            return $commun;
+            return $rules;
         }
 
-        return array_merge($commun, [
+        return array_merge($rules, [
+            'name' => 'required|min:6|alphanum|unique:accounts',
             'email' => 'required|email|max:255|unique:accounts',
             'password' => 'required|confirmed|min:6',
         ]);

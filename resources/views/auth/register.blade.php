@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-            <label for="password" class="text-normal text-dark">password</label>
+            <label for="password" class="text-normal text-dark">Password</label>
             <input id="password" type="password" class="form-control" name="password" required>
 
             @if ($errors->has('password'))
@@ -59,7 +59,7 @@
         <div class="form-group">
             <div class="peers ai-c jc-sb fxw-nw">
                 <div class="peer">
-                    <a href="/login">I have an account</a>
+                    <a href="{{ route('login') }}">I have an account</a>
                 </div>
                 <div class="peer">
                     <button class="btn btn-primary">Register</button>
