@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayersOnlineTable extends Migration
+class CreateCharactersOnlineTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePlayersOnlineTable extends Migration
      */
     public function up()
     {
-        Schema::create('players_online', function (Blueprint $table) {
+        Schema::create('characters_online', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('character_id')->unsigned();
-            $table->timestamps();
 
             $table->foreign('character_id')
                   ->references('id')
@@ -32,6 +31,6 @@ class CreatePlayersOnlineTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('players_online');
+        Schema::dropIfExists('characters_online');
     }
 }

@@ -11,7 +11,7 @@
   <title>{{ config('admin.name', 'Laravel') }}</title>
 
   <!-- Styles -->
-  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('/css/site.css') }}" rel="stylesheet">
 </head>
 <body class="app is-collapsed">
 

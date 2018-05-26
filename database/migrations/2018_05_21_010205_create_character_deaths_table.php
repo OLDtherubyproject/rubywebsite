@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayerDeathsTable extends Migration
+class CreateCharacterDeathsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreatePlayerDeathsTable extends Migration
      */
     public function up()
     {
-        Schema::create('player_deaths', function (Blueprint $table) {
+        Schema::create('character_deaths', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
+            $table->integer('character_id')->unsigned();
             $table->integer('time');
             $table->integer('level');
             $table->integer('killed_by')->unsigned();
-            $table->boolean('is_player');
+            $table->boolean('is_character');
             $table->string('mostdamage_by');
-            $table->boolean('mostdamage_is_player');
+            $table->boolean('mostdamage_is_character');
             $table->boolean('unjustified');
             $table->boolean('mostdamage_unjustified');
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');
@@ -45,6 +45,6 @@ class CreatePlayerDeathsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('player_deaths');
+        Schema::dropIfExists('character_deaths');
     }
 }

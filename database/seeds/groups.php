@@ -20,6 +20,7 @@ class groups extends Seeder
         
         for($i = 1; $i <= 1 ; $i++) {
             array_push($data, [
+                'id' => 3,
                 'name' => 'god',
                 'flags' => 272730398714,
                 'access' => 1,

@@ -11,7 +11,7 @@
   <title>{{ config('admin.name', 'Laravel') }}</title>
 
   <!-- Styles -->
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('/css/admin.css') }}" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
       </div>
     </div>
   
-    <script src="{{ mix('/js/app.js') }}"></script>
+    <script src="{{ mix('/js/admin.js') }}"></script>
     @include('sweetalert::alert')
 
 </body>

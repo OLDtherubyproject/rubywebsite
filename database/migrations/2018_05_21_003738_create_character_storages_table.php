@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayerItemsTable extends Migration
+class CreateCharacterStoragesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreatePlayerItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('player_items', function (Blueprint $table) {
+        Schema::create('character_storages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
-            $table->integer('pid');
-            $table->integer('sid');
-            $table->integer('itemtype');
-            $table->integer('count');
-            $table->binary('attributes');
+            $table->integer('character_id')->unsigned();
+            $table->integer('key')->unique();
+            $table->integer('value');
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');
@@ -37,6 +34,6 @@ class CreatePlayerItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('player_items');
+        Schema::dropIfExists('character_storages');
     }
 }

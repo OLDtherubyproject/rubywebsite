@@ -1,240 +1,252 @@
-<div class="header navbar">
-    <div class="header-container">
-        <ul class="nav-left">
-            <li>
-                <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
-                    <i class="ti-menu"></i>
-                </a>
-            </li>
-            <li class="search-box">
-                <a class="search-toggle no-pdd-right" href="javascript:void(0);">
-                    <i class="search-icon ti-search pdd-right-10"></i>
-                    <i class="search-icon-close ti-close pdd-right-10"></i>
-                </a>
-            </li>
-            <li class="search-input">
-                <input class="form-control" type="text" placeholder="Search...">
-            </li>
-        </ul>
-        <ul class="nav-right">
-            <li class="notifications dropdown">
-                <span class="counter bgc-red">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                    <i class="ti-bell"></i>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li class="pX-20 pY-15 bdB">
-                        <i class="ti-bell pR-10"></i>
-                        <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
-                    </li>
+    <div class="top-bar">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-md-6 d-md-block d-none">
+              <ul class="social-custom list-inline">
+                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              @guest
+                <div class="d-flex justify-content-md-end justify-content-between">
+                  <ul class="list-inline contact-info d-block d-md-none">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                  </ul>
+                  <div class="login">
+                    <a href="{{ route('login') }}" class="login-btn">
+                      <i class="fa fa-sign-in"></i>
+                      <span class="d-none d-md-inline-block">Login</span>
+                    </a>
+                    <a href="{{ route('register') }}" class="signup-btn">
+                      <i class="fa fa-user"></i>
+                      <span class="d-none d-md-inline-block">Register</span>
+                    </a>
+                  </div>
+                </div>
+              @endguest
+              @auth
+                <div class="d-flex justify-content-md-end justify-content-between">
+                  <div class="login">
+                    @if (auth()->user()->isGod())
+                      <a href="{{ route(ADMIN . '.dash') }}" class="login-btn">
+                        <button type="button" class="btn btn-sm btn-warning">ADMIN PANEL</button>
+                      </a>
+                    @endif
+                    <a href="{{ route('site_account') }}" class="login-btn">
+                      <i class="fa fa-user"></i>
+                      <span class="d-none d-md-inline-block">Profile</span>
+                    </a>
+                    <a href="{{ route('logout') }}" class="login-btn">
+                      <i class="fa fa-sign-out"></i>
+                      <span class="d-none d-md-inline-block">Logout</span>
+                    </a>
+                  </div>
+                </div>
+              @endauth
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="nav-holder make-sticky">
+        <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+          <div class="container">
+            <a href="/" class="navbar-brand home">
+              <img src="{{ asset('/images/' . setting('logo', 'rubylogo.png')) }}" alt="RubyWebsite logo" class="d-none d-md-inline-block">
+              <img src="{{ asset('/images/' . setting('logo', 'rubylogo.png')) }}" alt="Universal logo" class="d-inline-block d-md-none">
+              <h4 class="d-none d-md-inline-block logo">RubyWebsite</h4>
+            </a>
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+            <div id="navigation" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown active"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Home <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="index.html" class="nav-link">Option 1: Default Page</a></li>
+                    <li class="dropdown-item"><a href="index2.html" class="nav-link">Option 2: Application</a></li>
+                    <li class="dropdown-item"><a href="index3.html" class="nav-link">Option 3: Startup</a></li>
+                    <li class="dropdown-item"><a href="index4.html" class="nav-link">Option 4: Agency</a></li>
+                    <li class="dropdown-item"><a href="index5.html" class="nav-link">Option 5: Portfolio</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+                  <ul class="dropdown-menu megamenu">
                     <li>
-                        <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/1.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                    <span>
-                      <span class="fw-500">John Doe</span>
-                      <span class="c-grey-600">liked your <span class="text-dark">post</span>
-                      </span>
-                    </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">5 mins ago</small>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/2.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                    <span>
-                      <span class="fw-500">Moo Doe</span>
-                      <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
-                      </span>
-                    </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">7 mins ago</small>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/3.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                    <span>
-                      <span class="fw-500">Lee Doe</span>
-                      <span class="c-grey-600">commented on your <span class="text-dark">video</span>
-                      </span>
-                    </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">10 mins ago</small>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                      <div class="row">
+                        <div class="col-lg-6"><img src="img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block"></div>
+                        <div class="col-lg-3 col-md-6">
+                          <h5>Shortcodes</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="template-accordions.html" class="nav-link">Accordions</a></li>
+                            <li class="nav-item"><a href="template-alerts.html" class="nav-link">Alerts</a></li>
+                            <li class="nav-item"><a href="template-buttons.html" class="nav-link">Buttons</a></li>
+                            <li class="nav-item"><a href="template-content-boxes.html" class="nav-link">Content boxes</a></li>
+                            <li class="nav-item"><a href="template-blocks.html" class="nav-link">Horizontal blocks</a></li>
+                            <li class="nav-item"><a href="template-pagination.html" class="nav-link">Pagination</a></li>
+                            <li class="nav-item"><a href="template-tabs.html" class="nav-link">Tabs</a></li>
+                            <li class="nav-item"><a href="template-typography.html" class="nav-link">Typography</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                          <h5>Header variations</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="template-header-default.html" class="nav-link">Default sticky header</a></li>
+                            <li class="nav-item"><a href="template-header-nosticky.html" class="nav-link">No sticky header</a></li>
+                            <li class="nav-item"><a href="template-header-light.html" class="nav-link">Light header</a></li>
+                          </ul>
+                        </div>
+                      </div>
                     </li>
-                    <li class="pX-20 pY-15 ta-c bdT">
-            <span>
-              <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i
-                      class="ti-angle-right fsz-xs mL-10"></i></a>
-            </span>
-                    </li>
-                </ul>
-            </li>
-            <li class="notifications dropdown">
-                <span class="counter bgc-blue">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                    <i class="ti-email"></i>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li class="pX-20 pY-15 bdB">
-                        <i class="ti-email pR-10"></i>
-                        <span class="fsz-sm fw-600 c-grey-900">Emails</span>
-                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a>
+                  <ul class="dropdown-menu megamenu">
                     <li>
-                        <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/1.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                                        <div>
-                                            <div class="peers jc-sb fxw-nw mB-5">
-                                                <div class="peer">
-                                                    <p class="fw-500 mB-0">John Doe</p>
-                                                </div>
-                                                <div class="peer">
-                                                    <small class="fsz-xs">5 mins ago</small>
-                                                </div>
-                                            </div>
-                                            <span class="c-grey-600 fsz-sm">
-                        Want to create your own customized data generator for your app...
-                      </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/2.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                                        <div>
-                                            <div class="peers jc-sb fxw-nw mB-5">
-                                                <div class="peer">
-                                                    <p class="fw-500 mB-0">Moo Doe</p>
-                                                </div>
-                                                <div class="peer">
-                                                    <small class="fsz-xs">15 mins ago</small>
-                                                </div>
-                                            </div>
-                                            <span class="c-grey-600 fsz-sm">
-                        Want to create your own customized data generator for your app...
-                      </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/3.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                                        <div>
-                                            <div class="peers jc-sb fxw-nw mB-5">
-                                                <div class="peer">
-                                                    <p class="fw-500 mB-0">Lee Doe</p>
-                                                </div>
-                                                <div class="peer">
-                                                    <small class="fsz-xs">25 mins ago</small>
-                                                </div>
-                                            </div>
-                                            <span class="c-grey-600 fsz-sm">
-                        Want to create your own customized data generator for your app...
-                      </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                      <div class="row">
+                        <div class="col-lg-6"><img src="img/template-homepage.png" alt="" class="img-fluid d-none d-lg-block"></div>
+                        <div class="col-lg-3 col-md-6">
+                          <h5>Portfolio</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="portfolio-2.html" class="nav-link">2 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-2.html" class="nav-link">2 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-3.html" class="nav-link">3 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-3.html" class="nav-link">3 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-4.html" class="nav-link">4 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-4.html" class="nav-link">4 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-detail.html" class="nav-link">Portfolio - detail</a></li>
+                            <li class="nav-item"><a href="portfolio-detail-2.html" class="nav-link">Portfolio - detail 2</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                          <h5>About</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                            <li class="nav-item"><a href="team.html" class="nav-link">Our team</a></li>
+                            <li class="nav-item"><a href="team-member.html" class="nav-link">Team member</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                          </ul>
+                          <h5>Marketing</h5>
+                          <ul class="list-unstyled">
+                            <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                          </ul>
+                        </div>
+                      </div>
                     </li>
-                    <li class="pX-20 pY-15 ta-c bdT">
-            <span>
-              <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i
-                      class="fs-xs ti-angle-right mL-10"></i></a>
-            </span>
+                  </ul>
+                </li>
+                <!-- ========== FULL WIDTH MEGAMENU ==================-->
+                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle">Support <b class="caret"></b></a>
+                  <ul class="dropdown-menu megamenu">
+                    <li>
+                      <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                          <h5>Home</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Option 1: Default Page</a></li>
+                            <li class="nav-item"><a href="index2.html" class="nav-link">Option 2: Application</a></li>
+                            <li class="nav-item"><a href="index3.html" class="nav-link">Option 3: Startup</a></li>
+                            <li class="nav-item"><a href="index4.html" class="nav-link">Option 4: Agency</a></li>
+                            <li class="nav-item"><a href="index5.html" class="nav-link">Option 5: Portfolio</a></li>
+                          </ul>
+                          <h5>About</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                            <li class="nav-item"><a href="team.html" class="nav-link">Our team</a></li>
+                            <li class="nav-item"><a href="team-member.html" class="nav-link">Team member</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                          </ul>
+                          <h5>Marketing</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                          <h5>Portfolio</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="portfolio-2.html" class="nav-link">2 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-2.html" class="nav-link">2 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-3.html" class="nav-link">3 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-3.html" class="nav-link">3 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-4.html" class="nav-link">4 columns</a></li>
+                            <li class="nav-item"><a href="portfolio-no-space-4.html" class="nav-link">4 columns with negative space</a></li>
+                            <li class="nav-item"><a href="portfolio-detail.html" class="nav-link">Portfolio - detail</a></li>
+                            <li class="nav-item"><a href="portfolio-detail-2.html" class="nav-link">Portfolio - detail 2</a></li>
+                          </ul>
+                          <h5>User pages</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="customer-register.html" class="nav-link">Register / login</a></li>
+                            <li class="nav-item"><a href="customer-orders.html" class="nav-link">Orders history</a></li>
+                            <li class="nav-item"><a href="customer-order.html" class="nav-link">Order history detail</a></li>
+                            <li class="nav-item"><a href="customer-wishlist.html" class="nav-link">Wishlist</a></li>
+                            <li class="nav-item"><a href="customer-account.html" class="nav-link">Customer account / change password</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                          <h5>Shop</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="shop-category.html" class="nav-link">Category - sidebar right</a></li>
+                            <li class="nav-item"><a href="shop-category-left.html" class="nav-link">Category - sidebar left</a></li>
+                            <li class="nav-item"><a href="shop-category-full.html" class="nav-link">Category - full width</a></li>
+                            <li class="nav-item"><a href="shop-detail.html" class="nav-link">Product detail</a></li>
+                          </ul>
+                          <h5>Shop - order process</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="shop-basket.html" class="nav-link">Shopping cart</a></li>
+                            <li class="nav-item"><a href="shop-checkout1.html" class="nav-link">Checkout - step 1</a></li>
+                            <li class="nav-item"><a href="shop-checkout2.html" class="nav-link">Checkout - step 2</a></li>
+                            <li class="nav-item"><a href="shop-checkout3.html" class="nav-link">Checkout - step 3</a></li>
+                            <li class="nav-item"><a href="shop-checkout4.html" class="nav-link">Checkout - step 4</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                          <h5>Contact</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="contact2.html" class="nav-link">Contact - version 2</a></li>
+                            <li class="nav-item"><a href="contact3.html" class="nav-link">Contact - version 3</a></li>
+                          </ul>
+                          <h5>Pages</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="text.html" class="nav-link">Text page</a></li>
+                            <li class="nav-item"><a href="text-left.html" class="nav-link">Text page - left sidebar</a></li>
+                            <li class="nav-item"><a href="text-full.html" class="nav-link">Text page - full width</a></li>
+                            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                            <li class="nav-item"><a href="404.html" class="nav-link">404 page</a></li>
+                          </ul>
+                          <h5>Blog</h5>
+                          <ul class="list-unstyled mb-3">
+                            <li class="nav-item"><a href="blog.html" class="nav-link">Blog listing big</a></li>
+                            <li class="nav-item"><a href="blog-medium.html" class="nav-link">Blog listing medium</a></li>
+                            <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog listing small</a></li>
+                            <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog Post</a></li>
+                          </ul>
+                        </div>
+                      </div>
                     </li>
-                </ul>
-            </li>
-            <li class="dropdown">
-            @if(auth()->check())
-                <li class="dropdown show"><a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1"
-                                             data-toggle="dropdown" aria-expanded="true">
-                        <div class="peer mR-10"><img class="w-2r bdrs-50p"
-                                                     src="" alt=""></div>
-                        <div class="peer"><span class="fsz-sm c-grey-900">{{ auth()->user()->name }}</span></div>
-                    </a>
-                    <ul class="dropdown-menu fsz-sm show">
-                        <li><a href="javascript:document.getElementById('logout-form').submit()" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700"><i class="ti-power-off mR-10"></i>
-                                <span>Logout</span></a></li>
-                    </ul>
-
-                    {!! Form::open(['route' => 'logout', 'method' => 'POST', 'id' => 'logout-form']) !!}
-                    {!! Form::close() !!}
+                  </ul>
                 </li>
-            @else
-                <a href="{{ route('login') }}" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1"
-                   data-toggle="dropdown">
-                    <div class="peer mR-10">
-                        <img class="w-2r bdrs-50p" src="" alt="">
-                    </div>
-                    <div class="peer">
-                        <span class="fsz-sm c-grey-900">Login / Register</span>
-                    </div>
-                </a>
-            @endif
-            <ul class="dropdown-menu fsz-sm">
-                <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                        <i class="ti-settings mR-10"></i>
-                        <span>Setting</span>
-                    </a>
+                <!-- ========== FULL WIDTH MEGAMENU END ==================-->
+                <!-- ========== Contact dropdown ==================-->
+                <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Shop <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="contact.html" class="nav-link">Contact option 1</a></li>
+                    <li class="dropdown-item"><a href="contact2.html" class="nav-link">Contact option 2</a></li>
+                    <li class="dropdown-item"><a href="contact3.html" class="nav-link">Contact option 3</a></li>
+                  </ul>
                 </li>
-                <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                        <i class="ti-user mR-10"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                        <i class="ti-email mR-10"></i>
-                        <span>Messages</span>
-                    </a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li>
-                    <a href="/logout" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                        <i class="ti-power-off mR-10"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
-            </ul>
-            </li>
-        </ul>
-    </div>
-</div>
+                <!-- ========== Contact dropdown end ==================-->
+              </ul>
+            </div>
+            <div id="search" class="collapse clearfix">
+              <form role="search" class="navbar-form">
+                <div class="input-group">
+                  <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>

@@ -15,7 +15,7 @@ class CreateMarketOffersTable extends Migration
     {
         Schema::create('market_offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
+            $table->integer('character_id')->unsigned();
             $table->boolean('sale');
             $table->integer('itemtype');
             $table->integer('amount');
@@ -24,7 +24,7 @@ class CreateMarketOffersTable extends Migration
             $table->integer('price');
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');

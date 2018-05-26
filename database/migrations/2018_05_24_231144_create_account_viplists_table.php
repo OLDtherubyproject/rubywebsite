@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayerNamelocksTable extends Migration
+class CreateAccountViplistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,21 @@ class CreatePlayerNamelocksTable extends Migration
      */
     public function up()
     {
-        Schema::create('player_namelocks', function (Blueprint $table) {
+        Schema::create('account_viplists', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
-            $table->string('reason');
-            $table->bigInteger('namelocked_at');
-            $table->integer('namelocked_by')->unsigned();
+            $table->integer('account_id')->unsigned();
+            $table->integer('character_id')->unsigned();
+            $table->string('description')->nullable();
+            $table->integer('icon')->unsigned();
+            $table->boolean('notify')->default(false);
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('account_id')
                   ->references('id')
-                  ->on('characters')
+                  ->on('accounts')
                   ->onDelete('cascade');
 
-            $table->foreign('namelocked_by')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');
@@ -40,6 +41,6 @@ class CreatePlayerNamelocksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('player_namelocks');
+        Schema::dropIfExists('account_viplists');
     }
 }

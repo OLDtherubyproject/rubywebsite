@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-    Users <small>{{ trans('admin.manage') }}</small>
+    {{ trans('account.name.plural') }} <small>{{ trans('account.manage') }}</small>
 @endsection
 
 @section('content')

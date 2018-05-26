@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlayerStorage extends Model
+class CharacterStorage extends Model
 {
     //
 }

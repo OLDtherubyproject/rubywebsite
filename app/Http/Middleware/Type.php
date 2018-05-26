@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class Role
+class Type
 {
     /**
      * Handle an incoming request.
@@ -14,7 +14,7 @@ class Role
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, $type)
     {
         // Not Logged
         if (!Auth::check()) {
@@ -22,7 +22,7 @@ class Role
         }
 
         // Not allowed
-        if ($request->user()->role < $role) {
+        if ($request->user()->type < $type) {
             return abort(404);
         }
         return $next($request);

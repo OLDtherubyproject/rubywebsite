@@ -24,10 +24,10 @@ class accounts extends Seeder
                 'email' => 'test@example.com',
                 'password' => sha1('pass'),
                 'secret' => '',
-                'type' => 5,
+                'type' => 3,
                 'premdays' => 0,
                 'lastday' => 0,
-                'role'     => 5,
+                'created_at' => now(),
             ]);
         }
         

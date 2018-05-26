@@ -15,7 +15,8 @@ return [
 	"update_item" => "update",
 
 	// View buttons
-	"add_button"    => "Add",
+	"add_button"     => "Add",
+	"save_button"    => "Save",
 	"edit_button"    => "Edit",
 
 	// Login, Logout ..etc

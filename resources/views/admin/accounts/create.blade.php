@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-  Account <small>{{ trans('admin.add_new_item') }}</small>
+{{ trans('account.name.singular') }} <small>{{ trans('admin.add_new_item') }}</small>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
 
     @include('admin.accounts.form')
 
-    <button type="submit" class="btn btn-primary">{{ trans('admin.add_button') }}</button>
+    <button type="submit" class="btn btn-primary">{{ trans('admin.save_button') }}</button>
     
   {!! Form::close() !!}
   

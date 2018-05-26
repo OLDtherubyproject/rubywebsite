@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RubyWebsite</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts - Roboto-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <!-- Styles -->
+    <link href="{{ mix('/css/site.css') }}" rel="stylesheet">
 
-  <!-- CSRF Token -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  <title>{{ config('admin.name', 'Laravel') }}</title>
-
-  <!-- Styles -->
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-</head>
-<body class="app">
-
-    @include('site.partials.spinner')
-
-    <div>
-      <!-- #Left Sidebar ==================== -->
-      @include('site.partials.sidebar')
-
-      <!-- #Main ============================ -->
-      <div class="page-container">
-        <!-- ### $Topbar ### -->
-        @include('site.partials.topbar')
-
-        <!-- ### $App Screen Content ### -->
-        <main class='main-content bgc-grey-100'>
-          <div id='mainContent'>
-            <div class="container-fluid">
-
-              <h4 class="c-grey-900 mT-10 mB-30">@yield('page-header')</h4>
-        
-              @include('site.partials.messages')
-              @yield('content')
-
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    @include('admin.partials.spinner')
+    <div id="all">
+      <!-- ### $Topbar ### -->
+      @include('site.partials.topbar')
+      
+      @yield('content')
+      
+      <!-- FOOTER -->
+      <footer class="main-footer">
+        <div class="copyrights">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 text-center-md">
+                <p>&copy; 2018. {{ setting('websitename', 'RubyWebsite') }}</p>
+              </div>
+              <div class="col-lg-8 text-right text-center-md">
+                <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>
+                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+              </div>
             </div>
           </div>
-        </main>
-
-        <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2018 The Ruby Project. All rights reserved.</span>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
-  
-    <script src="{{ mix('/js/app.js') }}"></script>
-
-</body>
+    <script src="{{ mix('/js/site.js') }}"></script>
+  </body>
 </html>

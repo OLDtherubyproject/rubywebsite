@@ -15,7 +15,7 @@ class CreateMarketHistoryTable extends Migration
     {
         Schema::create('market_history', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
+            $table->integer('character_id')->unsigned();
             $table->boolean('sale');
             $table->integer('itemtype');
             $table->integer('amount');
@@ -25,7 +25,7 @@ class CreateMarketHistoryTable extends Migration
             $table->boolean('state');
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');

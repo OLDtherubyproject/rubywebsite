@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayerDepotitemsTable extends Migration
+class CreateCharacterDepotitemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePlayerDepotitemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('player_depotitems', function (Blueprint $table) {
+        Schema::create('character_depotitems', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_id')->unsigned();
+            $table->integer('character_id')->unsigned();
             $table->integer('pid');
             $table->integer('sid');
             $table->integer('itemtype');
@@ -23,7 +23,7 @@ class CreatePlayerDepotitemsTable extends Migration
             $table->binary('attributes');
             $table->timestamps();
 
-            $table->foreign('player_id')
+            $table->foreign('character_id')
                   ->references('id')
                   ->on('characters')
                   ->onDelete('cascade');
@@ -37,6 +37,6 @@ class CreatePlayerDepotitemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('player_depotitems');
+        Schema::dropIfExists('character_depotitems');
     }
 }

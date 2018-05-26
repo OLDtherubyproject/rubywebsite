@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-  Account <small>{{ trans('admin.update_item') }}</small>
+  {{ trans('account.name.singular') }} <small>{{ trans('admin.update_item') }}</small>
 @stop
 
 @section('content')

@@ -7,9 +7,9 @@ return [
         '1' => 'Yes',
     ],
 
-    'role' => [
-        '0' => 'User',
-        '10' => 'Admin',
+    'type' => [
+        '0' => 'Normal',
+        '3' => 'God',
     ],
 
     'status' => [

@@ -12,7 +12,7 @@
           <span class="icon-holder">
             <i class="c-green-500 icon-key"></i>
           </span>
-          <span class="title">Accounts</span>
+          <span class="title">{{ trans('account.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -36,7 +36,7 @@
           <span class="icon-holder">
             <i class="c-deep-purple-500 icon-people"></i>
           </span>
-          <span class="title">Groups</span>
+          <span class="title">{{ trans('group.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -44,7 +44,7 @@
           <span class="icon-holder">
             <i class="c-green-500 icon-organization"></i>
           </span>
-          <span class="title">Guilds</span>
+          <span class="title">{{ trans('guild.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -52,7 +52,7 @@
           <span class="icon-holder">
             <i class="c-red-500 icon-ban"></i>
           </span>
-          <span class="title">Bans</span>
+          <span class="title">{{ trans('ban.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -60,7 +60,7 @@
             <span class="icon-holder">
               <i class="c-teal-500 icon-settings"></i>
             </span>
-            <span class="title">Settings</span>
+            <span class="title">{{ trans('setting.name.plural') }}</span>
             <span class="arrow">
               <i class="ti-angle-right"></i>
             </span>
