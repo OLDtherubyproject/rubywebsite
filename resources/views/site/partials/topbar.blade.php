@@ -36,9 +36,9 @@
                         <button type="button" class="btn btn-sm btn-warning">ADMIN PANEL</button>
                       </a>
                     @endif
-                    <a href="{{ route('site_account') }}" class="login-btn">
+                    <a href="{{ route('accounts.show') }}" class="login-btn">
                       <i class="fa fa-user"></i>
-                      <span class="d-none d-md-inline-block">Profile</span>
+                      <span class="d-none d-md-inline-block">Account</span>
                     </a>
                     <a href="{{ route('logout') }}" class="login-btn">
                       <i class="fa fa-sign-out"></i>
@@ -62,14 +62,8 @@
             <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item dropdown active"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Home <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="index.html" class="nav-link">Option 1: Default Page</a></li>
-                    <li class="dropdown-item"><a href="index2.html" class="nav-link">Option 2: Application</a></li>
-                    <li class="dropdown-item"><a href="index3.html" class="nav-link">Option 3: Startup</a></li>
-                    <li class="dropdown-item"><a href="index4.html" class="nav-link">Option 4: Agency</a></li>
-                    <li class="dropdown-item"><a href="index5.html" class="nav-link">Option 5: Portfolio</a></li>
-                  </ul>
+                <li class="nav-item {{ Route::currentRouteNamed('blog') ? 'active' : '' }}">
+                  <a href="{{ route('blog') }}">Home <b class="caret"></b></a>
                 </li>
                 <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
                   <ul class="dropdown-menu megamenu">

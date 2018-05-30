@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Account;
+use App\CharactersOnline;
 
 class AccountController extends Controller
 {
@@ -51,9 +52,15 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id = null)
     {
-        //
+        $view = ($this->isAdminRequest()) ? 'admin.accounts.show' : 'site.accounts.show';
+
+        $account = ($id) ? Account::find($id) : auth()->user();
+        $characters = $account->characters()->get();
+        $charactersOnline = CharactersOnline::all();
+
+        return view($view, compact('account', 'characters', 'charactersOnline'));
     }
 
     /**
@@ -97,7 +104,19 @@ class AccountController extends Controller
     {
         Account::destroy($id);
 
-        return back()->withSuccess(trans('admin.success_destroy')); 
+        return back()->withSuccess(trans('admin.success_destroy'));
+    }
+
+
+    public function generate_rk($id = null)
+    {
+        $account = ($id) ? Account::find($id) : auth()->user();
+        
+        if (!$account->generate_rk()) {
+            return back()->withErrors(trans('account.error_generate_rk'));
+        }
+
+        return back()->withSuccess(trans('account.success_generate_rk'));
     }
 }
 

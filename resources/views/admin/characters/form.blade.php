@@ -4,6 +4,10 @@
         {!! Form::mySelect('account_id', 'Account', $accounts) !!}
 
         {!! Form::mySelect('group_id', 'Group', $groups) !!}
+
+        {!! Form::mySelect('town_id', 'Town', $towns) !!}
+
+        {!! Form::mySelect('sex', 'Sex', [0 => "Female", 1 => "Male"]) !!}
         
         {!! Form::myInput('text', 'name', 'Name') !!}
     

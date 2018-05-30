@@ -2130,10 +2130,9 @@ ul ul a.nav-link {
 }
 
 footer.main-footer {
-  padding: 60px 0;
-  padding-bottom: 0;
-  background: #555;
-  color: #fff;
+  padding: 50px 0;
+  background: #333;
+  color: #ccc;
 }
 
 footer.main-footer a {
@@ -2192,10 +2191,6 @@ footer.main-footer .photo-stream a {
 }
 
 footer.main-footer .copyrights {
-  padding: 50px 0;
-  background: #333;
-  color: #ccc;
-  margin-top: 50px;
 }
 
 footer.main-footer .copyrights a {

@@ -42,7 +42,6 @@ class characters extends Seeder
                 'posx' => 800,
                 'posy' => 800,
                 'posz' => 7,
-                'conditions' => '',
                 'cap' => 0,
                 'sex' => 1,
                 'lastlogin' => 0,

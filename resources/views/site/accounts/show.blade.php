@@ -10,7 +10,7 @@
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="{{ route('blog') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('site_account') }}">Account</a></li>
+                <li class="breadcrumb-item active">Account</li>
               </ul>
             </div>
           </div>
@@ -59,7 +59,7 @@
                                                     <div name="recovery_key" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted mb-4 text-center" style="padding: 10px;">
                                                         @if (empty(auth()->user()->recovery_key))
                                                             {!! Form::open([
-                                                                'url'  => route('site_account_generate_rk'), 
+                                                                'url'  => route('accounts.generate_rk'), 
                                                                 'method' => 'POST',
                                                                 ])
                                                             !!}
@@ -70,8 +70,8 @@
                                                         @endif
                                                     </div>
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted text-center" style="padding: 10px;">
-                                                        <button type="button" class="btn btn-success btn-xs" alt="List of Friends" rel="lista_amigos"><span class="fa fa-group"></span> Friends</button>
-                                                        <button type="button" class="btn btn-success btn-xs" alt="Create Character" data-toggle="modal" data-target="#create_character" rel="create_character"><span class="fa fa-plus"></span> Create Character</button>
+                                                        <a href="{{ route('accounts.viplist.show') }}"><button type="button" class="btn btn-success btn-xs" alt="List of Friends" rel="list_of_friends"><span class="fa fa-group"></span> Friends</button></a>
+                                                        <a href="{{ route('characters.create') }}"><button type="button" class="btn btn-success btn-xs" alt="Create Character" rel="create_character"><span class="fa fa-plus"></span> Create Character</button></a>
                                                         <button type="button" class="btn btn-warning btn-xs" alt="Donate" rel=""><span class="fa fa-money"></span> Donate</button>
                                                     </div>
                                                 </div>
@@ -115,10 +115,8 @@
                                                                 <tr>
                                                                     <th class="text-center">Name</th>
                                                                     <th class="text-center">Gender</th>
-                                                                    <!--<th class="text-center"></th> -->
                                                                     <th class="text-center">Level</th>
-                                                                    <!-- <th class="text-center"></th> -->
-                                                                    <th class="text-center">World</th>
+                                                                    <th class="text-center">Status</th>
                                                                     <th class="text-center">Actions</th>
                                                                 </tr>
                                                             </thead>
@@ -139,12 +137,16 @@
                                                                                 @endif
                                                                             </td>
                                                                             <td>{{ $character->level }}</td>
-                                                                            <td>Ruby Server</td>
+                                                                            @if ($charactersOnline->contains('character_id', $character->id))
+                                                                                <td class="text-success">Online</td>
+                                                                            @else
+                                                                                <td class="text-danger">Offline</td>
+                                                                            @endif
                                                                             <td>
                                                                                 @if ($character->deletion != 0)
                                                                                     {!! Form::open([
                                                                                         'class'=>'delete',
-                                                                                        'url'  => route('site_account_undelete_char', $character->id), 
+                                                                                        'url'  => route('characters.undestroy', $character->id), 
                                                                                         'method' => 'PATCH',
                                                                                         ])
                                                                                     !!}
@@ -155,7 +157,7 @@
                                                                                 @else
                                                                                     {!! Form::open([
                                                                                         'class'=>'delete',
-                                                                                        'url'  => route('site_account_delete_char', $character->id), 
+                                                                                        'url'  => route('characters.destroy', $character->id), 
                                                                                         'method' => 'DELETE',
                                                                                         ])
                                                                                     !!}

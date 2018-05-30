@@ -100,9 +100,15 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'This name cannot be used because it contains a forbidden word or combination of letters. Please choose another name!',
         ],
+        'sex' => [
+            'between' => 'The sex must be Male or Female.',
+        ],
+        'town_id' => [
+            'required' => 'Please select a valid town.'
+        ]
     ],
 
     /*

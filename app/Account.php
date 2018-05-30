@@ -50,7 +50,7 @@ class Account extends Authenticatable
         );
 
         $this->recovery_key = strtoupper($rk);
-        $this->save();
+        return $this->save();
     }
 
     public function characters()

@@ -26,11 +26,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::post('settings/server/save','SettingController@server_store');
     });
 
-    Route::get('account', 'SiteAccountController@index')->name('site_account');
-    Route::get('account/create_character', 'SiteAccountController@create_character')->name('site_account_create_character');
-    Route::post('account/grk', 'SiteAccountController@generate_rk')->name('site_account_generate_rk');
-    Route::delete('account/dchar/{id}', 'SiteAccountController@delete_character')->name('site_account_delete_char');
-    Route::patch('account/udchar/{id}', 'SiteAccountController@undelete_character')->name('site_account_undelete_char');
+    Route::get('account', 'AccountController@show')->name('accounts.show');
+    Route::get('account/create_character', 'CharacterController@create')->name('characters.create');
+    Route::post('account/create_character', 'CharacterController@store')->name('characters.store');
+    Route::get('account/friends', 'AccountViplistController@show')->name('accounts.viplist.show');
+    
+    Route::post('account/generate_rk', 'AccountController@generate_rk')->name('accounts.generate_rk');
+    Route::delete('account/delete_character/{id}', 'CharacterController@destroy')->name('characters.destroy');
+    Route::patch('account/undelete_character/{id}', 'CharacterController@undestroy')->name('characters.undestroy');
 
     Route::get('/', function () {
         return view('site.blog.index');

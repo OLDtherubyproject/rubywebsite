@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use App\Character;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,12 @@ class AppServiceProvider extends ServiceProvider
         }
         require_once base_path('resources/macros/form.php');
         Schema::defaultStringLength(191);
+
+        Character::creating(function ($character) {
+            $count = Character::select('account_id')->where('account_id', '=', $character->account_id)->limit(5)->count();
+
+            return ($count < 5);
+        });
     }
 
     /**

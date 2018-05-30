@@ -12,7 +12,7 @@
           <span class="icon-holder">
             <i class="c-green-500 icon-key"></i>
           </span>
-          <span class="title">{{ trans('account.name.plural') }}</span>
+          <span class="title">{{ trans('accounts.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -20,7 +20,7 @@
           <span class="icon-holder">
             <i class="c-red-500 icon-user"></i>
           </span>
-          <span class="title">{{ trans('character.name.plural') }}</span>
+          <span class="title">{{ trans('characters.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -28,7 +28,7 @@
           <span class="icon-holder">
             <i class="c-deep-orange-500 ti-location-pin"></i>
           </span>
-          <span class="title">{{ trans('town.name.plural') }}</span>
+          <span class="title">{{ trans('towns.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -36,7 +36,7 @@
           <span class="icon-holder">
             <i class="c-deep-purple-500 icon-people"></i>
           </span>
-          <span class="title">{{ trans('group.name.plural') }}</span>
+          <span class="title">{{ trans('groups.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -44,7 +44,7 @@
           <span class="icon-holder">
             <i class="c-green-500 icon-organization"></i>
           </span>
-          <span class="title">{{ trans('guild.name.plural') }}</span>
+          <span class="title">{{ trans('guilds.name.plural') }}</span>
         </a>
       </li>
       <li class="nav-item">

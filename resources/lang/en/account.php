@@ -2,6 +2,8 @@
 
 return [
 
+    "success_generate_rk" => "Recovery Key generated successfully!",
+    "error_generate_rk" => "Failed to generate the Recovery Key.",
     "manage" => "",
     "name" => [
         "singular"   => "Account",

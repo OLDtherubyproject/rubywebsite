@@ -13,7 +13,7 @@ class Character extends Model
      * @var array
      */
     protected $fillable = [
-        'account_id', 'group_id', 'name', 'level', 'experience'
+        'account_id', 'group_id', 'name', 'level', 'experience', 'sex'
     ];
 
     /*
@@ -24,11 +24,11 @@ class Character extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'account_id' => "required|integer",
-            'group_id' => "required|integer",
-            'name' => 'required|string',
-            'level' => 'required|integer',
-            'experience' => 'required|integer'
+            'account_id' => 'sometimes|integer|min:1',
+            'group_id' => 'sometimes|integer|min:1',
+            'name' => 'regex:/^[a-zA-Z ]+$/',
+            'sex' => 'required|between:0,1',
+            'town_id' => 'required|integer|min:1',
         ];
 
         if ($update) {
@@ -36,8 +36,6 @@ class Character extends Model
         }
 
         return array_merge($commun, [
-            'account_id' => "required|integer",
-            'group_id' => "required|integer"
         ]);
     }
 

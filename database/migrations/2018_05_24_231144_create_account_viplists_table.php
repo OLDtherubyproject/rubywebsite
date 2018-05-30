@@ -16,7 +16,7 @@ class CreateAccountViplistsTable extends Migration
         Schema::create('account_viplists', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('account_id')->unsigned();
-            $table->integer('character_id')->unsigned();
+            $table->integer('character_id')->unique()->unsigned();
             $table->string('description')->nullable();
             $table->integer('icon')->unsigned();
             $table->boolean('notify')->default(false);
