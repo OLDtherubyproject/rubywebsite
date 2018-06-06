@@ -36,8 +36,8 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <img src="{{ asset('images/avatars/' . auth()->user()->avatar . '.png') }}" title="Change Avatar" name="avatar" class="center-block img-responsive" alt="Change Avatar">
                                                     </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted"><strong>Leohige</strong></div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 small text-muted">kesuhige@gmail.com</div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted"><strong>{{ auth()->user()->name }}</strong></div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 small text-muted">{{ auth()->user()->email }}</div>
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; margin-bottom: 4px;">
                                                         <div class="btn btn-success btn-sm btn-block" style="text-align: left">VIP Account<span class="pull-right">{{ auth()->user()->premdays }} Days</span></div>
                                                     </div>
@@ -52,7 +52,7 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-4 text-muted">
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding: 10px;">
-                                                                <button type="button" class="btn btn-link btn-xs" id="btn_senha" alt="Change Password" data-toggle="modal" data-target="#senha_email" rel="senha">Change Email / Password</button>
+                                                                <button type="button" class="btn btn-link btn-xs" alt="Change Password" data-toggle="modal" data-target="#password_email">Change Email / Password</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -87,7 +87,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th>Last login in</th>
-                                                                <td>{{ date('M d, Y \\a\t h:s', auth()->user()->lastday) }}</td>
+                                                                <td>{{ (auth()->user()->lastday) ? date('M d, Y \\a\t h:s', auth()->user()->lastday) : 'Never' }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>Points</th>
@@ -244,7 +244,7 @@
                                 </div>
                             </div>
 
-                            <div class="modal fade" id="change_avatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -260,18 +260,18 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="avatares">Avatars</label>
-                                                    <div class="select2-container form-control" id="s2id_avatares">
-                                                        <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" id="select2-chosen-1">Unknown</span><abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a>
+                                                    <div class="select2-container form-control">
+                                                        <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen">Unknown</span><abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a>
                                                         <label for="s2id_autogen1" class="select2-offscreen">PreviewAvatars</label>
-                                                        <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1">
+                                                        <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1">
                                                         <div class="select2-drop select2-display-none select2-with-searchbox">
                                                             <div class="select2-search">
                                                                 <label for="s2id_autogen1_search" class="select2-offscreen">PreviewAvatars</label>
-                                                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder=""> </div>
-                                                            <ul class="select2-results" role="listbox" id="select2-results-1"> </ul>
+                                                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" placeholder=""> </div>
+                                                            <ul class="select2-results" role="listbox"> </ul>
                                                         </div>
                                                     </div>
-                                                    <select single="single" class="form-control" id="avatares" name="avatares" tabindex="-1" title="PreviewAvatars" style="display: none;">
+                                                    <select single="single" class="form-control" name="avatares" tabindex="-1" title="PreviewAvatars" style="display: none;">
                                                         <option value="0">Unknown</option>
                                                         <option value="1">Flareon</option>
                                                         <option value="2">Chimchar</option>
@@ -301,52 +301,33 @@
                                 </div>
                             </div>
 
-                            <div class="modal fade" id="list_friends" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-
-                                            <div class="tab-content" style="border: 0 !important;">
-                                                <h4 class="text-center"><strong>Friends</strong></h4>
-
-                                                <div class="panel panel-primary">
-                                                    <div class="panel-body">
-                                                        No character was found!
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="senha_email" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="password_email" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
                                             <!-- Nav tabs -->
                                             <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified">
-                                                <li class="nav-item"><a data-toggle="tab" href="#emailT" role="tab" aria-controls="emailT" class="nav-link active show" aria-selected="true">Email</a></li>
-                                                <li class="nav-item"><a data-toggle="tab" href="#senhaT" role="tab" aria-controls="senhaT" class="nav-link">Senha</a></li>
+                                                <li class="nav-item"><a data-toggle="tab" href="#change_email" role="tab" aria-controls="emailT" class="nav-link active show" aria-selected="true">Email</a></li>
+                                                <li class="nav-item"><a data-toggle="tab" href="#change_password" role="tab" aria-controls="senhaT" class="nav-link">Senha</a></li>
                                             </ul>
 
                                             <!-- Tab panes -->
                                             <div class="tab-content" style="border: 0 !important;">
-                                                <div role="tabpanel" class="tab-pane fade" id="senhaT">
+                                                <div role="tabpanel" class="tab-pane fade" id="change_password">
                                                     <div class="panel panel-success">
                                                         <div>
-                                                            <form method="POST" action="" accept-charset="UTF-8" class="form" name="senha">
-                                                                <div class="form-group">
-                                                                    <label for="current_password">Current Password</label>
-                                                                    <input placeholder="******" class="form-control" name="current_password" type="password" value="" id="current_password">
-                                                                </div>
+                                                            <form method="POST" action="" accept-charset="UTF-8" class="form" name="senha">                                                                
                                                                 <div class="form-group">
                                                                     <label for="password">New Password</label>
-                                                                    <input placeholder="******" class="form-control" name="password" type="password" value="" id="password">
+                                                                    <input placeholder="******" class="form-control" name="password" type="password" value="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="repeat_password">Repeat Password</label>
-                                                                    <input placeholder="******" class="form-control" name="repeat_password" type="password" value="" id="repeat_password">
+                                                                    <input placeholder="******" class="form-control" name="repeat_password" type="password" value="">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="current_password">Current Password</label>
+                                                                    <input placeholder="******" class="form-control" name="current_password" type="password" value="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <input class="btn btn-primary btn-block" type="submit" value="Change">
@@ -356,21 +337,23 @@
                                                     </div>
                                                 </div>
 
-                                                <div role="tabpanel" class="tab-pane fade in active show" id="emailT">
+                                                <div role="tabpanel" class="tab-pane fade in active show" id="change_email">
                                                     <div class="panel panel-primary">
                                                         <div>
-                                                            <form method="POST" action="" accept-charset="UTF-8" class="form" name="email">
-                                                                <div class="form-group">
-                                                                    <label for="current_password">Current Password</label>
-                                                                    <input placeholder="******" class="form-control" name="current_password" type="password" value="" id="current_password">
-                                                                </div>
+                                                            <form method="POST" action="" accept-charset="UTF-8" class="form">                                                                
                                                                 <div class="form-group">
                                                                     <label for="email">Email</label>
-                                                                    <input placeholder="email@example.com" class="form-control" name="email" type="email" id="email">
+                                                                    <input placeholder="email@example.com" class="form-control" name="email" type="email">
                                                                 </div>
+
                                                                 <div class="form-group">
                                                                     <label for="repeat_email">Repeat Email</label>
-                                                                    <input placeholder="email@example.com" class="form-control" name="repeat_email" type="email" id="repeat_email">
+                                                                    <input placeholder="email@example.com" class="form-control" name="repeat_email" type="email">
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="current_password">Current Password</label>
+                                                                    <input placeholder="******" class="form-control" name="current_password" type="password" value="">
                                                                 </div>
 
                                                                 <div class="form-group">
@@ -385,7 +368,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="create_character" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+                            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -400,7 +384,7 @@
                                                 <form method="POST" action="" accept-charset="UTF-8" class="form" name="senha">
                                                     <div class="form-group">
                                                         <label for="current_password">Name</label>
-                                                        <input placeholder="Ash Ketchum" class="form-control" name="current_password" type="password" value="" id="current_password">
+                                                        <input placeholder="Ash Ketchum" class="form-control" name="current_password" type="password" value="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="password">Gender</label>

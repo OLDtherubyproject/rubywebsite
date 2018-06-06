@@ -23,7 +23,7 @@ class CreateAccountsTable extends Migration
             $table->integer('avatar')->default(1);
             $table->integer('type')->default(0);
             $table->integer('premdays')->default(0);
-            $table->integer('lastday')->default(0);
+            $table->integer('lastday')->nullable();
             $table->integer('points')->default(0);
             $table->integer('points_spent')->default(0);
             $table->rememberToken();

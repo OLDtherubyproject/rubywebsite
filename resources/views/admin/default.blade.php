@@ -52,7 +52,7 @@
     </div>
   
     <script src="{{ mix('/js/admin.js') }}"></script>
-    @include('sweetalert::alert')
+    @yield('customjs')
 
 </body>
 </html>

@@ -19,6 +19,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::resource('guilds','GuildController');
         Route::resource('items','ItemController');
 
+        Route::get('filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show')->name('filemanager.index');
+        Route::post('filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload')->name('filemanager.upload');
+
+        Route::get('posts/create','PostController@create')->name('posts.create');
 
         Route::get('settings/website','SettingController@website')->name('website_settings');
         Route::get('settings/server','SettingController@server')->name('server_settings');
@@ -26,14 +30,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::post('settings/server/save','SettingController@server_store');
     });
 
-    Route::get('account', 'AccountController@show')->name('accounts.show');
-    Route::get('account/create_character', 'CharacterController@create')->name('characters.create');
-    Route::post('account/create_character', 'CharacterController@store')->name('characters.store');
-    Route::get('account/friends', 'AccountViplistController@show')->name('accounts.viplist.show');
-    
-    Route::post('account/generate_rk', 'AccountController@generate_rk')->name('accounts.generate_rk');
-    Route::delete('account/delete_character/{id}', 'CharacterController@destroy')->name('characters.destroy');
-    Route::patch('account/undelete_character/{id}', 'CharacterController@undestroy')->name('characters.undestroy');
+    Route::group(['prefix' => 'account', 'middleware'=>['auth']], function() {
+        Route::get('/', 'AccountController@show')->name('accounts.show');
+        Route::get('create_character', 'CharacterController@create')->name('characters.create');
+        Route::post('create_character', 'CharacterController@store')->name('characters.store');
+        Route::get('friends', 'AccountViplistController@show')->name('accounts.viplist.show');
+        
+        Route::post('generate_rk', 'AccountController@generate_rk')->name('accounts.generate_rk');
+        Route::delete('delete_character/{id}', 'CharacterController@destroy')->name('characters.destroy');
+        Route::patch('undelete_character/{id}', 'CharacterController@undestroy')->name('characters.undestroy');
+    });
 
     Route::get('/', function () {
         return view('site.blog.index');

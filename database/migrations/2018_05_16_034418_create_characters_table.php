@@ -73,6 +73,11 @@ class CreateCharactersTable extends Migration
                   ->on('groups')
                   ->onDelete('cascade');
         });
+
+        DB::unprepared('CREATE TRIGGER `ondelete_characters` BEFORE DELETE ON `characters`
+                        FOR EACH ROW BEGIN
+                            UPDATE `houses` SET `owner` = 0 WHERE `owner` = OLD.`id`;
+                        END');
     }
 
     /**
@@ -83,5 +88,6 @@ class CreateCharactersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('characters');
+        DB::unprepared('DROP TRIGGER IF EXISTS `ondelete_characters`');
     }
 }

@@ -25,6 +25,13 @@ class CreateGuildsTable extends Migration
                   ->on('characters')
                   ->onDelete('cascade');
         });
+
+        DB::unprepared('CREATE TRIGGER `oncreate_guilds` AFTER INSERT ON `guilds`
+                        FOR EACH ROW BEGIN
+                            INSERT INTO `guild_ranks` (`name`, `level`, `guild_id`) VALUES ("the Leader", 3, NEW.`id`);
+                            INSERT INTO `guild_ranks` (`name`, `level`, `guild_id`) VALUES ("a Vice-Leader", 2, NEW.`id`);
+                            INSERT INTO `guild_ranks` (`name`, `level`, `guild_id`) VALUES ("a Member", 1, NEW.`id`);
+                        END');
     }
 
     /**
@@ -35,5 +42,6 @@ class CreateGuildsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('guilds');
+        DB::unprepared('DROP TRIGGER IF EXISTS `oncreate_guilds`');
     }
 }

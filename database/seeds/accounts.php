@@ -26,7 +26,7 @@ class accounts extends Seeder
                 'secret' => '',
                 'type' => 3,
                 'premdays' => 0,
-                'lastday' => 0,
+                'lastday' => null,
                 'created_at' => now(),
             ]);
         }

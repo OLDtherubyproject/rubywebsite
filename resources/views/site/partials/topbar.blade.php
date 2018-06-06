@@ -69,7 +69,7 @@
                   <ul class="dropdown-menu megamenu">
                     <li>
                       <div class="row">
-                        <div class="col-lg-6"><img src="img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block"></div>
+                        <div class="col-lg-6"><img src="" alt="" class="img-fluid d-none d-lg-block"></div>
                         <div class="col-lg-3 col-md-6">
                           <h5>Shortcodes</h5>
                           <ul class="list-unstyled mb-3">
@@ -99,7 +99,7 @@
                   <ul class="dropdown-menu megamenu">
                     <li>
                       <div class="row">
-                        <div class="col-lg-6"><img src="img/template-homepage.png" alt="" class="img-fluid d-none d-lg-block"></div>
+                        <div class="col-lg-6"><img src="" alt="" class="img-fluid d-none d-lg-block"></div>
                         <div class="col-lg-3 col-md-6">
                           <h5>Portfolio</h5>
                           <ul class="list-unstyled mb-3">

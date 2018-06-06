@@ -29,6 +29,7 @@ class CreatePokemonTable extends Migration
             $table->integer('spatk');
             $table->integer('spdef');
             $table->binary('conditions');
+            $table->binary('moves');
             $table->timestamps();
         });
     }

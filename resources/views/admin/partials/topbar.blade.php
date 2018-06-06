@@ -177,10 +177,10 @@
       <li class="dropdown">
         <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
           <div class="peer mR-10">
-            <img class="w-2r bdrs-50p" src="" alt="">
+            <img class="w-2r bdrs-50p" src="{{ asset('images/avatars/' . auth()->user()->avatar . '.png') }}" alt="">
           </div>
           <div class="peer">
-            <span class="fsz-sm c-grey-900">{{ auth()->user()->fullname }}</span>
+            <span class="fsz-sm c-grey-900">{{ auth()->user()->name }}</span>
           </div>
         </a>
         <ul class="dropdown-menu fsz-sm">
