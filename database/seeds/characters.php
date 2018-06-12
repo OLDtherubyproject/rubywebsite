@@ -27,7 +27,6 @@ class characters extends Seeder
                 'group_id' => 3,
                 'deletion' => 0,
                 'balance' => 0,
-                'vocation' => 1,
                 'health' => 150,
                 'healthmax' => 150,
                 'pokemon_capacity' => 0,

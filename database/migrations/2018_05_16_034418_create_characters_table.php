@@ -20,7 +20,7 @@ class CreateCharactersTable extends Migration
             $table->integer('group_id')->unsigned()->default(3);
             $table->integer('level')->unsigned()->default(1);   
             $table->bigInteger('experience')->unsigned()->default(0);
-            $table->integer('vocation')->default(1);
+            $table->integer('profession')->default(0);
             $table->integer('health')->default(500);
             $table->integer('healthmax')->default(500);
             $table->integer('pokemon_capacity')->default(6);
