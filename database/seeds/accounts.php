@@ -24,7 +24,7 @@ class accounts extends Seeder
                 'email' => 'test@example.com',
                 'password' => sha1('pass'),
                 'secret' => '',
-                'type' => 3,
+                'type' => 5,
                 'premdays' => 0,
                 'lastday' => null,
                 'created_at' => now(),
