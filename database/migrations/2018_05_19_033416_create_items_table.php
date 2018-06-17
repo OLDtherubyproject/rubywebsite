@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->integer('fromid')->unique();
             $table->integer('toid')->unique()->nullable();
             $table->string('name');
-            $table->json('attributes')->nullable();
+            $table->binary('attributes')->nullable();
             $table->timestamps();
         });
     }
