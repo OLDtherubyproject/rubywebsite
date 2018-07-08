@@ -3,7 +3,7 @@
 @section('content')
 
 @section('page-header')
-    Groups <small>{{ trans('admin.manage') }}</small>
+    {{ trans('group.name.plural') }} <small>{{ trans('admin.manage') }}</small>
 @endsection
 
 <div class="mB-20">
@@ -19,23 +19,23 @@
             
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('group.form.name') }}</th>
                         <th>Flags</th>
-                        <th>Access</th>
-                        <th>Max CP Items</th>
-                        <th>Max Vip Entries</th>
-                        <th>Actions</th>
+                        <th>{{ trans('group.form.access') }}</th>
+                        <th>{{ trans('group.form.max_cp_items') }}</th>
+                        <th>{{ trans('group.form.max_vip_entries') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </thead>
              
                 <tfoot>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('group.form.name') }}</th>
                         <th>Flags</th>
-                        <th>Access</th>
-                        <th>Max CP Items</th>
-                        <th>Max Vip Entries</th>
-                        <th>Actions</th>
+                        <th>{{ trans('group.form.access') }}</th>
+                        <th>{{ trans('group.form.max_cp_items') }}</th>
+                        <th>{{ trans('group.form.max_vip_entries') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </tfoot>
              

@@ -13,9 +13,12 @@ return [
 	"delete_title" => "Deletar Item",
 	"add_new_item" => "novo",
 	"update_item" => "atualizar",
+	"search" => "Pesquisar",
+	"all_rights_reserved" => "Todos os direitos reservados",
 
 	// View buttons
 	"add_button"    => "Novo",
+	"save_button"    => "Salvar",
 	"edit_button"    => "Editar",
 	"actions" => "Ações",
 

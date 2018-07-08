@@ -19,17 +19,17 @@
             
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('account.form.name') }}</th>
                         <th>Email</th>
-                        <th>Actions</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </thead>
              
                 <tfoot>
                     <tr>
-                        <th>Name</th>
+                        <th>{{ trans('account.form.name')}}</th>
                         <th>Email</th>
-                        <th>Actions</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </tfoot>
              

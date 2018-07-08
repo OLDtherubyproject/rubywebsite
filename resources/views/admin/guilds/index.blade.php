@@ -3,7 +3,7 @@
 @section('content')
 
 @section('page-header')
-    Guilds <small>{{ trans('admin.manage') }}</small>
+    {{ trans('guild.name.plural') }} <small>{{ trans('admin.manage') }}</small>
 @endsection
 
 <div class="mB-20">
@@ -18,21 +18,21 @@
         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Owner</th>
-                        <th>Message of the Day</th>
-                        <th>Members</th>
-                        <th>Actions</th>
+                        <th>{{ trans('guild.form.name') }}</th>
+                        <th>{{ trans('guild.form.owner') }}</th>
+                        <th>{{ trans('guild.form.message_of_the_day') }}</th>
+                        <th>{{ trans('guild.form.members') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </thead>
              
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Owner</th>
-                        <th>Message of the Day</th>
-                        <th>Members</th>
-                        <th>Actions</th>
+                        <th>{{ trans('guild.form.name') }}</th>
+                        <th>{{ trans('guild.form.owner') }}</th>
+                        <th>{{ trans('guild.form.message_of_the_day') }}</th>
+                        <th>{{ trans('guild.form.members') }}</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </tfoot>
              
