@@ -23,7 +23,7 @@
                         <th>X</th>
                         <th>Y</th>
                         <th>Z</th>
-                        <th>Actions</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </thead>
              
@@ -33,7 +33,7 @@
                         <th>X</th>
                         <th>Y</th>
                         <th>Z</th>
-                        <th>Actions</th>
+                        <th>{{ trans('admin.actions') }}</th>
                     </tr>
                 </tfoot>
              

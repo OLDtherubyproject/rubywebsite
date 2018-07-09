@@ -13,7 +13,7 @@
         </a>
       </li>
       <li class="search-input">
-        <input class="form-control" type="text" placeholder="Search...">
+        <input class="form-control" type="text" placeholder="{{ trans('admin.search') }}...">
       </li>
     </ul>
     <ul class="nav-right">

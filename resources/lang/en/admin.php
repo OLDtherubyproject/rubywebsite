@@ -13,6 +13,8 @@ return [
 	"delete_title" => "Delete Item",
 	"add_new_item" => "new",
 	"update_item" => "update",
+	"search" => "Search",
+	"all_rights_reserved" => "All rights reserved",
 
 	// View buttons
 	"add_button"     => "Add",

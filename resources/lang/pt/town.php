@@ -8,7 +8,7 @@ return [
         "plural"  => "Cidades",
     ],
     "form" => [
-        "name"   => "Nome",
+        "name"   => "Nome"
     ]
 
 ];

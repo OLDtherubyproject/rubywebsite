@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-  Website Settings <small>{{ trans('admin.add_new_item') }}</small>
+  {{ trans('website.title') }} <small>{{ trans('admin.manage') }}</small>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
 
     @include('admin.settings.website_form')
 
-    <button type="submit" class="btn btn-primary">{{ trans('admin.add_button') }}</button>
+    <button type="submit" class="btn btn-primary">{{ trans('admin.save_button') }}</button>
     
   {!! Form::close() !!}
   
