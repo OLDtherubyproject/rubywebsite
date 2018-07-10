@@ -21,6 +21,7 @@ return [
 	"add_button"     => "Add",
 	"save_button"    => "Save",
 	"edit_button"    => "Edit",
+	"actions" => "Actions",
 
 	// Login, Logout ..etc
 	"start_session"      => "Sign in to start your session",

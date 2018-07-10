@@ -116,7 +116,7 @@
                                                                     <th class="text-center">{{ trans('character.form.name') }}</th>
                                                                     <th class="text-center">{{ trans('character.form.gender') }}</th>
                                                                     <th class="text-center">{{ trans('character.form.level') }}</th>
-                                                                    <th class="text-center">{{ trans('character.form.status') }}</th>
+                                                                    <th class="text-center">Status</th>
                                                                     <th class="text-center">{{ trans('admin.actions') }}</th>
                                                                 </tr>
                                                             </thead>
