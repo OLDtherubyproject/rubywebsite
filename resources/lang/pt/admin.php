@@ -15,6 +15,7 @@ return [
 	"update_item" => "atualizar",
 	"search" => "Pesquisar",
 	"all_rights_reserved" => "Todos os direitos reservados",
+	"change" => "Alterar",
 
 	// View buttons
 	"add_button"    => "Novo",
@@ -23,14 +24,17 @@ return [
 	"actions" => "Ações",
 
 	// Login, Logout ..etc
-	"start_session"      => "Sign in to start your session",
-	"remember_me"        => "Remember Me",
-	"forgot_password"    => "I forgot my password",
-	"login_btn"          => "Sign In",
-	"reset_password"     => "Reset Password",
-	"reset_password_btn" => "Send reset link",
-	"connect"            => "Loggin",
-
-
-
+	"start_session"      => "Entrar",
+	"remember_me"        => "Lembrar",
+	"forgot_password"    => "Esqueci minha senha",
+	"login_btn"          => "Entrar",
+	"password"			 => "Senha",
+	"reset_password"     => "Resetar Senha",
+	"new_password"		 => "Nova Senha",
+	"current_password"   => "Senha Atual",
+	"repeat_password"    => "Repetir Senha",
+	"reset_password_btn" => "Enviar link para resetar",
+	"connect"            => "Login",
+	"logout" 			 => "Sair",
+	"repeat_email" 		 => "Repetir Email"
 ];
