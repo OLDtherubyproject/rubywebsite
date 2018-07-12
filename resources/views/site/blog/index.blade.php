@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
-                <li class="breadcrumb-item"><a href="{{ route('blog') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('blog') }}">{{ trans('menu.home') }}</a></li>
               </ul>
             </div>
           </div>

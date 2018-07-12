@@ -19,11 +19,11 @@
                   <div class="login">
                     <a href="{{ route('login') }}" class="login-btn">
                       <i class="fa fa-sign-in"></i>
-                      <span class="d-none d-md-inline-block">Login</span>
+                      <span class="d-none d-md-inline-block">{{ trans('admin.connect') }}</span>
                     </a>
                     <a href="{{ route('register') }}" class="signup-btn">
                       <i class="fa fa-user"></i>
-                      <span class="d-none d-md-inline-block">Register</span>
+                      <span class="d-none d-md-inline-block">{{ trans('admin.register') }}</span>
                     </a>
                   </div>
                 </div>
@@ -38,11 +38,11 @@
                     @endif
                     <a href="{{ route('accounts.show') }}" class="login-btn">
                       <i class="fa fa-user"></i>
-                      <span class="d-none d-md-inline-block">Account</span>
+                      <span class="d-none d-md-inline-block">{{ trans('account.name.singular') }}</span>
                     </a>
                     <a href="{{ route('logout') }}" class="login-btn">
                       <i class="fa fa-sign-out"></i>
-                      <span class="d-none d-md-inline-block">Logout</span>
+                      <span class="d-none d-md-inline-block">{{ trans('admin.logout') }}</span>
                     </a>
                   </div>
                 </div>
@@ -63,7 +63,7 @@
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item {{ Route::currentRouteNamed('blog') ? 'active' : '' }}">
-                  <a href="{{ route('blog') }}">Home <b class="caret"></b></a>
+                  <a href="{{ route('blog') }}">{{ trans('menu.home') }} <b class="caret"></b></a>
                 </li>
                 <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
                   <ul class="dropdown-menu megamenu">
@@ -95,7 +95,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a>
+                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ trans('menu.community') }} <b class="caret"></b></a>
                   <ul class="dropdown-menu megamenu">
                     <li>
                       <div class="row">
@@ -131,7 +131,7 @@
                   </ul>
                 </li>
                 <!-- ========== FULL WIDTH MEGAMENU ==================-->
-                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle">Support <b class="caret"></b></a>
+                <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle">{{ trans('menu.support') }} <b class="caret"></b></a>
                   <ul class="dropdown-menu megamenu">
                     <li>
                       <div class="row">
@@ -223,7 +223,7 @@
                 </li>
                 <!-- ========== FULL WIDTH MEGAMENU END ==================-->
                 <!-- ========== Contact dropdown ==================-->
-                <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Shop <b class="caret"></b></a>
+                <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">{{ trans('menu.shop') }} <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li class="dropdown-item"><a href="contact.html" class="nav-link">Contact option 1</a></li>
                     <li class="dropdown-item"><a href="contact2.html" class="nav-link">Contact option 2</a></li>
