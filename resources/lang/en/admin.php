@@ -34,7 +34,8 @@ return [
 	"current_password"   => "Current Password",
 	"repeat_password"    => "Repeat Password",
 	"reset_password_btn" => "Send reset link",
-	"connect"            => "Loggin",
+	"connect"            => "Login",
 	"logout" 			 => "Log Out",
-	"repeat_email" 		 => "Repeat Email"
+	"repeat_email" 		 => "Repeat Email",
+	"register" 			 => "Register"
 ];
