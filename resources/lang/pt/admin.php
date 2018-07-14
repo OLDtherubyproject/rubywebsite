@@ -35,7 +35,7 @@ return [
 	"new_password"		 => "Nova Senha",
 	"current_password"   => "Senha Atual",
 	"repeat_password"    => "Repetir Senha",
-	"reset_password_btn" => "Enviar link para resetar",
+	"send_password_reset_link" => "Enviar senha",
 	"repeat_email" 		 => "Repetir Email",
 	"register" 			 => "Criar Conta",
 	"dont_have_account"  => "Não tem uma conta?",

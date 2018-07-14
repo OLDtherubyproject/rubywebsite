@@ -35,7 +35,7 @@ return [
 	"new_password"       => "New Password",
 	"current_password"   => "Current Password",
 	"repeat_password"    => "Repeat Password",
-	"reset_password_btn" => "Send reset link",
+	"send_password_reset_link" => "Send password reset link",
 	"repeat_email" 		 => "Repeat Email",
 	"register" 			 => "Register",
 	"dont_have_account"  => "Don't have an account yet?",
