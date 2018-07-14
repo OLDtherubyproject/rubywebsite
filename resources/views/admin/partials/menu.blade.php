@@ -40,7 +40,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class='sidebar-link' href="{{ route(ADMIN . '.guilds.index') }}">
+        <a class='sidebar-link' href="{{ route('guilds') }}">
           <span class="icon-holder">
             <i class="c-green-500 icon-organization"></i>
           </span>

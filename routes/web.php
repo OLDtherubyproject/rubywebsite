@@ -16,7 +16,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         Route::resource('towns','TownController');
         Route::resource('characters','CharacterController');
         Route::resource('groups','GroupController');
-        Route::resource('guilds','GuildController');
         Route::resource('items','ItemController');
 
         Route::get('filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show')->name('filemanager.index');
@@ -44,5 +43,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/', function () {
         return view('site.blog.index');
     })->name('blog');
+
+    Route::get('guilds', 'GuildController@index')->name('guilds');
 });
 

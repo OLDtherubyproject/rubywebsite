@@ -18,7 +18,7 @@ class GuildController extends Controller
     public function index()
     {
         $guilds = Guild::latest('name')->get();
-        return view('admin.guilds.index', compact('guilds', 'characters'));
+        return view('site.community.guilds.index', compact('guilds', 'characters'));
     }
 
     /**
