@@ -19,7 +19,7 @@
                   <div class="login">
                     <a href="{{ route('login') }}" class="login-btn">
                       <i class="fa fa-sign-in"></i>
-                      <span class="d-none d-md-inline-block">{{ trans('admin.connect') }}</span>
+                      <span class="d-none d-md-inline-block">{{ trans('admin.login') }}</span>
                     </a>
                     <a href="{{ route('register') }}" class="signup-btn">
                       <i class="fa fa-user"></i>
@@ -33,7 +33,7 @@
                   <div class="login">
                     @if (auth()->user()->isGod())
                       <a href="{{ route(ADMIN . '.dash') }}" class="login-btn">
-                        <button type="button" class="btn btn-sm btn-warning">ADMIN PANEL</button>
+                        <button type="button" class="btn btn-sm btn-warning">{{ trans('admin.panel') }}</button>
                       </a>
                     @endif
                     <a href="{{ route('accounts.show') }}" class="login-btn">

@@ -16,6 +16,7 @@ return [
 	"search" => "Pesquisar",
 	"all_rights_reserved" => "Todos os direitos reservados",
 	"change" => "Alterar",
+	"panel" => "Painel Administrativo",
 
 	// View buttons
 	"add_button"    => "Novo",
@@ -27,15 +28,15 @@ return [
 	"start_session"      => "Entrar",
 	"remember_me"        => "Lembrar",
 	"forgot_password"    => "Esqueci minha senha",
-	"login_btn"          => "Entrar",
+	"login"          	 => "Login",
+	"logout" 			 => "Sair",
 	"password"			 => "Senha",
 	"reset_password"     => "Resetar Senha",
 	"new_password"		 => "Nova Senha",
 	"current_password"   => "Senha Atual",
 	"repeat_password"    => "Repetir Senha",
 	"reset_password_btn" => "Enviar link para resetar",
-	"connect"            => "Entrar",
-	"logout" 			 => "Sair",
 	"repeat_email" 		 => "Repetir Email",
-	"register" 			 => "Criar Conta"
+	"register" 			 => "Criar Conta",
+	"dont_have_account"  => "Não tem uma conta?" 
 ];

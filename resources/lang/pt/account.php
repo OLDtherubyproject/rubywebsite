@@ -19,7 +19,7 @@ return [
         "friends" => "Amigos",
         "donate" => "Faça uma doação",
         "never" => "Nunca",
-        "account_name" => "Nome da Conta",
+        "account_name" => "Usuário",
         "registered_in" => "Criado em",
         "last_login_in" => "Último login em",
         "points" => "Pontos",
