@@ -38,5 +38,6 @@ return [
 	"reset_password_btn" => "Enviar link para resetar",
 	"repeat_email" 		 => "Repetir Email",
 	"register" 			 => "Criar Conta",
-	"dont_have_account"  => "Não tem uma conta?" 
+	"dont_have_account"  => "Não tem uma conta?",
+	"already_have_account" => "Já possui uma conta?"
 ];

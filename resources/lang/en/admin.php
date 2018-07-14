@@ -38,5 +38,6 @@ return [
 	"reset_password_btn" => "Send reset link",
 	"repeat_email" 		 => "Repeat Email",
 	"register" 			 => "Register",
-	"dont_have_account"  => "Don't have an account yet?"
+	"dont_have_account"  => "Don't have an account yet?",
+	"already_have_account" => "Already have an account?"
 ];
