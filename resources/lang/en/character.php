@@ -1,8 +1,6 @@
 <?php 
 
 return [
-
-    "manage" => "",
     "name" => [
         "singular"   => "Character",
         "plural"  => "Characters",
@@ -20,5 +18,4 @@ return [
         "undelete" => "Undelete",
         "delete" => "Delete"
     ]
-
 ];

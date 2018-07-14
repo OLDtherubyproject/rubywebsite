@@ -5,13 +5,13 @@
         <div class="container">
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-              <h1 class="h2">FRIEND LIST</h1>
+              <h1 class="h2">{{ trans('account.form.friends') }}</h1>
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
-                <li class="breadcrumb-item"><a href="{{ route('blog') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('accounts.show') }}">Account</a></li>
-                <li class="breadcrumb-item active">Friends</li>
+                <li class="breadcrumb-item"><a href="{{ route('blog') }}">{{ trans('menu.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('accounts.show') }}">{{ trans('account.name.singular') }}</a></li>
+                <li class="breadcrumb-item active">{{ trans('account.form.friends') }}</li>
               </ul>
             </div>
           </div>
@@ -36,7 +36,7 @@
                                                     <table class="table-custom-1 table table-hover mz-4">
                                                         <thead>
                                                             <tr>
-                                                                <th class="text-center">Name</th>
+                                                                <th class="text-center">{{ trans('account.form.friends_name') }}</th>
                                                                 <th class="text-center">Status</th>
                                                             </tr>
                                                         </thead>
