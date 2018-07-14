@@ -17,6 +17,7 @@ return [
         "recovery_key" => "Chave de Recuperação",
         "generate" => "Gerar",
         "friends" => "Amigos",
+        "friends_name" => "Nome",
         "donate" => "Faça uma doação",
         "never" => "Nunca",
         "account_name" => "Usuário",

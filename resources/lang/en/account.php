@@ -19,6 +19,7 @@ return [
         "recovery_key" => "Recovery Key",
         "generate" => "Generate",
         "friends" => "Friends",
+        "friends_name" => "Name",
         "donate" => "Donate",
         "never" => "Never",
         "account_name" => "Account Name",
