@@ -18,7 +18,7 @@ class GuildController extends Controller
     public function index()
     {
         $guilds = Guild::latest('name')->get();
-        return view('site.community.guilds.index', compact('guilds', 'characters'));
+        return view('site.guilds.index', compact('guilds', 'characters'));
     }
 
     /**
@@ -72,7 +72,7 @@ class GuildController extends Controller
         $characters = Character::pluck('name', 'id');
         $guild = Guild::findOrFail($id);
 
-        return view('admin.guild.edit', compact('guild', 'characters'));
+        return view('admin.guilds.edit', compact('guild', 'characters'));
     }
 
     /**
@@ -90,7 +90,7 @@ class GuildController extends Controller
 
         $guild->update($request->all());
 
-        return redirect()->route(ADMIN . '.guilds.index')->withSuccess(trans('admin.success_update'));
+        return redirect()->route(ADMIN . '.guilds.edit', $id)->withSuccess(trans('admin.success_update'));
     }
 
     /**

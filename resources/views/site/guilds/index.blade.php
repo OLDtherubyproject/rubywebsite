@@ -64,11 +64,14 @@
                                         <td width="90px">
                                             <ul class="list-inline text-center">
                                                 <li class="list-inline-item my-2 mx-0">
-                                                    <a href="#" title="{{ trans('admin.edit_title') }}" class="btn btn-primary btn-sm"><span class="ti-pencil"></span></a></li>
+                                                    <a href="{{ route(ADMIN . '.guilds.edit', $guild->id) }}" title="{{ trans('admin.edit_title') }}" class="btn btn-info btn-sm">
+                                                        <span class="ti-pencil"></span>
+                                                    </a>
+                                                </li>
                                                 <li class="list-inline-item">
-                                                
-                                                        <button class="btn btn-danger btn-sm" title="{{ trans('admin.delete_title') }}"><i class="ti-trash"></i></button>
-                                                        
+                                                    <button class="btn btn-danger btn-sm" title="{{ trans('admin.delete_title') }}">
+                                                        <i class="ti-trash"></i>
+                                                    </button>    
                                                     {!! Form::close() !!}
                                                 </li>
                                             </ul>
