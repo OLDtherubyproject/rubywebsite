@@ -45,16 +45,6 @@ class GuildController extends Controller
         Guild::create($request->all());
 
         return redirect('guilds');
-
-        // $this->validate($request, Guild::rules());
-        
-        // Guild::create($request->all());
-
-        // $guilds = Guild::latest('name')->get();
-        // return view('site.guilds.index', compact('guilds'));
-
-        // alert()->success('Guild Created', 'Successfully');
-        // return redirect()->route('site.guilds.index')->withSuccess(trans('admin.success_store'));
     }
 
     /**
@@ -67,7 +57,7 @@ class GuildController extends Controller
     {
         $guild = Guild::findOrFail($id);
 
-        return view('admin.guilds.show', compact('guild'));
+        return view('site.guilds.show', compact('guild'));
     }
 
     /**

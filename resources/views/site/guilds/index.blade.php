@@ -62,7 +62,7 @@
                     <tbody>
                         @foreach ($guilds as $guild)
                             <tr>
-                                <td><a href="#">{{ $guild->name }}</a></td>
+                                <td><a href="{{ route('guilds.show', $guild->id) }}">{{ $guild->name }}</a></td>
                                 <td><a href="#">{{ $guild->owner->name }}</a></td>
                                 <td>{{ $guild->motd }}</td>
                                 <td>{{ $guild->memberships->count() }}</td>
