@@ -18,7 +18,7 @@ class GuildController extends Controller
     public function index()
     {
         $guilds = Guild::latest('name')->get();
-        return view('site.guilds.index', compact('guilds', 'characters'));
+        return view('site.guilds.index', compact('guilds'));
     }
 
     /**
@@ -40,12 +40,21 @@ class GuildController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Guild::rules());
         
+        $this->validate($request, Guild::rules());
         Guild::create($request->all());
 
-        alert()->success('Guild Created', 'Successfully');
-        return redirect('admin/guilds')->withSuccess(trans('admin.success_store'));
+        return redirect('guilds');
+
+        // $this->validate($request, Guild::rules());
+        
+        // Guild::create($request->all());
+
+        // $guilds = Guild::latest('name')->get();
+        // return view('site.guilds.index', compact('guilds'));
+
+        // alert()->success('Guild Created', 'Successfully');
+        // return redirect()->route('site.guilds.index')->withSuccess(trans('admin.success_store'));
     }
 
     /**
@@ -103,9 +112,9 @@ class GuildController extends Controller
     {
         try {
             Guild::destroy($id);
-            return back()->withSuccess(trans('admin.success_destroy')); 
+            return redirect('guilds')->withSuccess(trans('admin.success_destroy')); 
         }catch(\Illuminate\Database\QueryException $e){
-            return back()->withErrors(array('message' => 'Login field is required.')); 
+            return redirect('guilds')->withErrors(array('message' => 'Login field is required.')); 
         }
     }
 }

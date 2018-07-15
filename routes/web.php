@@ -47,6 +47,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::group(['prefix' => 'guilds'], function() {
         Route::get('/', 'GuildController@index')->name('guilds');
-        Route::resource('guids', 'AccountController');
+        // Route::resource('guids', 'AccountController');
     });
 });

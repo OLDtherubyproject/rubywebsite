@@ -76,9 +76,15 @@
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <button class="btn btn-danger btn-sm" title="{{ trans('admin.delete_title') }}">
-                                                        <i class="ti-trash"></i>
-                                                    </button>    
+                                                    {!! Form::open([
+                                                        'class'=>'delete',
+                                                        'url'  => route(ADMIN . '.guilds.destroy', $guild->id), 
+                                                        'method' => 'DELETE',
+                                                        ]) 
+                                                    !!}
+                                                        <button class="btn btn-danger btn-sm" title="{{ trans('admin.delete_title') }}">
+                                                            <i class="ti-trash"></i>
+                                                        </button>
                                                     {!! Form::close() !!}
                                                 </li>
                                             </ul>
