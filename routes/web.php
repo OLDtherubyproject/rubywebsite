@@ -44,5 +44,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/', function () {
         return view('site.blog.index');
     })->name('blog');
-});
 
+    Route::group(['prefix' => 'guilds'], function() {
+        Route::get('/', 'GuildController@index')->name('guilds');
+        Route::get('/{id}', 'GuildController@show')->name('guilds.show');
+    });
+});
