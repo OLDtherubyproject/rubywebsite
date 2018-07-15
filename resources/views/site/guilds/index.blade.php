@@ -23,6 +23,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                @auth
+                    @if (auth()->user()->isGod())
+                        <a href="{{ route(ADMIN . '.guilds.create') }}" title="{{ trans('admin.add_button') }}" class="btn btn-info mt-5">
+                            {{ trans('admin.add_button') }}
+                        </a>
+                    @endif
+                @endauth
                 <table class="table table-striped table-bordered my-4" cellspacing="0" width="100%">
                     <thead>
                         <tr>

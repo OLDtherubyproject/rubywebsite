@@ -19,7 +19,7 @@ return [
 	"panel" => "Painel Administrativo",
 
 	// View buttons
-	"add_button"    => "Novo",
+	"add_button"    => "Adicionar",
 	"save_button"    => "Salvar",
 	"edit_button"    => "Editar",
 	"actions" => "Ações",
